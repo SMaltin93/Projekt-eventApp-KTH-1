@@ -12,11 +12,16 @@ using System.Text.RegularExpressions;
 
 namespace KTHare
 {
-    public partial class errorProvider : Form
+    public partial class Form1 : Form
     {
-        public errorProvider()
+
+        private string newPassword; // to control the login
+        private string newUserName; // to control the login
+
+        public Form1()
         {
             InitializeComponent();
+           
         }
       
       
@@ -32,6 +37,7 @@ namespace KTHare
                     SmtpClient smto = new SmtpClient("smtp.gmail.com", 587);
                     mail.From = new MailAddress("globala.kthare@gmail.com");
                     mail.To.Add(mailBox.Text);
+                    newUserName = mailBox.Text;
                     mail.Subject = "Your password";
                     mail.Body = GenerateNumber();
                     smto.Credentials = new System.Net.NetworkCredential("globala.kthare@gmail.com", "kthare2021");
@@ -44,12 +50,7 @@ namespace KTHare
                 {
                     MessageBox.Show(ex.Message);
                 }
-                /*
-
-                Main mainForm = new Main();
-                mainForm.Show(); 
-                this.Hide();  // Hide login form
-                */
+               
             }
 
         }
@@ -59,9 +60,11 @@ namespace KTHare
             String input = mailBox.Text;
             bool check = emailControl(input);
 
+
             if (check == true)
             {
                 errorProvider1.Clear();
+               
             }
             else if (string.IsNullOrEmpty(mailBox.Text))
             {
@@ -77,13 +80,32 @@ namespace KTHare
         }
 
         private void passBox_TextChanged(object sender, EventArgs e)
+
         {
+           
+
 
         }
+        
 
         private void logButt_Click(object sender, EventArgs e)
         {
+            
+            if ( newPassword == passBox.Text && mailBox.Text == newUserName)
+            {
+                
+                EventsMenu start = new EventsMenu();
+                this.Hide();
+                start.Show();
 
+            }else if (newPassword != "")
+            {
+                MessageBox.Show("It's no password, check your email and type your password!", "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            } else
+            {
+                MessageBox.Show("Password incorrect", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void exiteButt_Click(object sender, EventArgs e)
@@ -96,8 +118,6 @@ namespace KTHare
          * ################ Help functions ###########
          */
 
-
-
         /**
          *
          *@return true if the user has a kth email, false otherwise 
@@ -106,7 +126,6 @@ namespace KTHare
         {
             return Regex.IsMatch(userMail, @"^([\w\.\-]+)@((?i)[kth]+)((\.(\w)(?i)[se])+)$");
         }
-
 
         /**
          *Generate password
@@ -120,7 +139,13 @@ namespace KTHare
             {
                 send_rand += rand.Next(0, 9).ToString();
             }
+            newPassword = send_rand;
             return send_rand;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
