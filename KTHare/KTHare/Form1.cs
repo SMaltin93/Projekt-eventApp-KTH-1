@@ -17,10 +17,12 @@ namespace KTHare
 
         private string newPassword; // to control the login
         private string newUserName; // to control the login
+        private bool correctInput; 
 
         public Form1()
         {
             InitializeComponent();
+            logButt.Enabled = false; // disable login button 
            
         }
       
@@ -33,6 +35,7 @@ namespace KTHare
 
                 try
                 {
+
                     MailMessage mail = new MailMessage();
                     SmtpClient smto = new SmtpClient("smtp.gmail.com", 587);
                     mail.From = new MailAddress("globala.kthare@gmail.com");
@@ -43,7 +46,7 @@ namespace KTHare
                     smto.Credentials = new System.Net.NetworkCredential("globala.kthare@gmail.com", "kthare2021");
                     smto.EnableSsl = true;
                     smto.Send(mail);
-                    MessageBox.Show("Check your email, password is sended");
+                    MessageBox.Show("Check your email, the password has sent!");
 
                 }
                 catch (Exception ex)
@@ -57,40 +60,76 @@ namespace KTHare
 
         private void mailBox_TextChanged(object sender, EventArgs e)
         {
-            String input = mailBox.Text;
-            bool check = emailControl(input);
+            string inputEmail; 
+            correctInput = false;
 
+            while  (correctInput != true )
+            {
+                inputEmail = mailBox.Text;
+                correctInput = emailControl(inputEmail);
+                logButt.Enabled = false;
+                break;
+            }
+            while (true)
+            {
+                if (correctInput == true )
+                {
+                    errorProvider1.Clear();
+                    if (!string.IsNullOrEmpty(passBox.Text) )
+                    {
+                        
+                        logButt.Enabled = true;
+                        break;
 
-            if (check == true)
-            {
-                errorProvider1.Clear();
-               
+                    }
+                   
+                    break;
+
+                }
+                else if (string.IsNullOrEmpty(mailBox.Text))
+                {
+                    errorProvider1.SetError(this.mailBox, "Enter your KTH email");
+                    break;
+                }
+                else
+                {
+                    errorProvider1.SetError(this.mailBox, "You are not KTH:are, please try again");
+                    break; 
+                }
+                
             }
-            else if (string.IsNullOrEmpty(mailBox.Text))
-            {
-                errorProvider1.SetError(this.mailBox, "Enter your KTH email");
-                return;
-            }
-            else
-            {
-                errorProvider1.SetError(this.mailBox, "You are not KTH:are, please try again");
-                return;
-            }
+
+            
+           
 
         }
 
         private void passBox_TextChanged(object sender, EventArgs e)
 
         {
-           
+            while (correctInput == true)
+            {
 
-
+                if(string.IsNullOrEmpty(passBox.Text))
+                {
+                    logButt.Enabled = false;
+                    break;
+                }
+                else
+                {
+                    logButt.Enabled = true;
+                    break;
+                }
+               
+            }
+            
         }
         
 
         private void logButt_Click(object sender, EventArgs e)
-        {
-            
+        { 
+
+
             if ( newPassword == passBox.Text && mailBox.Text == newUserName)
             {
                 
@@ -100,10 +139,11 @@ namespace KTHare
 
             }else if (newPassword != "")
             {
-                MessageBox.Show("It's no password, check your email and type your password!", "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Password incorrect", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             } else
             {
-                MessageBox.Show("Password incorrect", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("It's no password, check your email and type your password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
@@ -142,8 +182,12 @@ namespace KTHare
             newPassword = send_rand;
             return send_rand;
         }
+         
 
-        private void label2_Click(object sender, EventArgs e)
+
+
+
+    private void label2_Click(object sender, EventArgs e)
         {
 
         }

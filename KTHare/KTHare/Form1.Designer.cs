@@ -30,9 +30,9 @@ namespace KTHare
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.passBox = new System.Windows.Forms.TextBox();
             this.logButt = new System.Windows.Forms.Button();
             this.exiteButt = new System.Windows.Forms.Button();
-            this.passBox = new System.Windows.Forms.TextBox();
             this.mailBox = new System.Windows.Forms.TextBox();
             this.sendButt = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -40,6 +40,15 @@ namespace KTHare
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // passBox
+            // 
+            this.passBox.Location = new System.Drawing.Point(303, 339);
+            this.passBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.passBox.Name = "passBox";
+            this.passBox.Size = new System.Drawing.Size(217, 27);
+            this.passBox.TabIndex = 2;
+            this.passBox.TextChanged += new System.EventHandler(this.passBox_TextChanged);
             // 
             // logButt
             // 
@@ -62,15 +71,6 @@ namespace KTHare
             this.exiteButt.Text = "Exit";
             this.exiteButt.UseVisualStyleBackColor = true;
             this.exiteButt.Click += new System.EventHandler(this.exiteButt_Click);
-            // 
-            // passBox
-            // 
-            this.passBox.Location = new System.Drawing.Point(303, 339);
-            this.passBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.passBox.Name = "passBox";
-            this.passBox.Size = new System.Drawing.Size(217, 27);
-            this.passBox.TabIndex = 2;
-            this.passBox.TextChanged += new System.EventHandler(this.passBox_TextChanged);
             // 
             // mailBox
             // 
