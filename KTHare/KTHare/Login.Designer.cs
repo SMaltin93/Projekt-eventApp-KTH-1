@@ -35,6 +35,7 @@ namespace KTHare
             this.lbl_mail = new System.Windows.Forms.Label();
             this.lbl_password = new System.Windows.Forms.Label();
             this.linklbl_createaccount = new System.Windows.Forms.LinkLabel();
+            this.cb_showPassword = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btn_login
@@ -91,11 +92,22 @@ namespace KTHare
             this.linklbl_createaccount.Text = "Har inget konto?";
             this.linklbl_createaccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklbl_createaccount_LinkClicked);
             // 
+            // cb_showPassword
+            // 
+            this.cb_showPassword.AutoSize = true;
+            this.cb_showPassword.Location = new System.Drawing.Point(312, 39);
+            this.cb_showPassword.Name = "cb_showPassword";
+            this.cb_showPassword.Size = new System.Drawing.Size(15, 14);
+            this.cb_showPassword.TabIndex = 6;
+            this.cb_showPassword.UseVisualStyleBackColor = true;
+            this.cb_showPassword.CheckedChanged += new System.EventHandler(this.cb_showPassword_CheckedChanged);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 91);
+            this.ClientSize = new System.Drawing.Size(330, 91);
+            this.Controls.Add(this.cb_showPassword);
             this.Controls.Add(this.linklbl_createaccount);
             this.Controls.Add(this.lbl_password);
             this.Controls.Add(this.lbl_mail);
@@ -120,5 +132,6 @@ namespace KTHare
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.LinkLabel linklbl_createaccount;
         private System.Windows.Forms.Label lbl_password;
+        private System.Windows.Forms.CheckBox cb_showPassword;
     }
 }

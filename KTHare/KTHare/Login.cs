@@ -61,5 +61,16 @@ namespace KTHare
             this.Hide();
             form.Show();
         }
+
+        private void cb_showPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_showPassword.Checked == true)
+            {
+                tb_password.UseSystemPasswordChar = false;
+            } else
+            {
+                tb_password.UseSystemPasswordChar = true;
+            }
+        }
     }
 }

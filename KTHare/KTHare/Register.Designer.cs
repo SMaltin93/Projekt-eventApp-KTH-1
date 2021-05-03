@@ -37,6 +37,7 @@ namespace KTHare
             this.btn_register = new System.Windows.Forms.Button();
             this.tb_password = new System.Windows.Forms.TextBox();
             this.lbl_password = new System.Windows.Forms.Label();
+            this.cb_showPassword = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // linklbl_login
@@ -109,11 +110,22 @@ namespace KTHare
             this.lbl_password.TabIndex = 13;
             this.lbl_password.Text = "Lösenord";
             // 
+            // cb_showPassword
+            // 
+            this.cb_showPassword.AutoSize = true;
+            this.cb_showPassword.Location = new System.Drawing.Point(313, 68);
+            this.cb_showPassword.Name = "cb_showPassword";
+            this.cb_showPassword.Size = new System.Drawing.Size(15, 14);
+            this.cb_showPassword.TabIndex = 14;
+            this.cb_showPassword.UseVisualStyleBackColor = true;
+            this.cb_showPassword.CheckedChanged += new System.EventHandler(this.cb_showPassword_CheckedChanged);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 121);
+            this.ClientSize = new System.Drawing.Size(330, 120);
+            this.Controls.Add(this.cb_showPassword);
             this.Controls.Add(this.lbl_password);
             this.Controls.Add(this.tb_password);
             this.Controls.Add(this.linklbl_login);
@@ -141,5 +153,6 @@ namespace KTHare
         private System.Windows.Forms.Button btn_register;
         private System.Windows.Forms.TextBox tb_password;
         private System.Windows.Forms.Label lbl_password;
+        private System.Windows.Forms.CheckBox cb_showPassword;
     }
 }
