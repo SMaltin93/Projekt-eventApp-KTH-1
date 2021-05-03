@@ -52,3 +52,4 @@ C:\Users\slema\source\repos\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.
 =======
 C:\Users\maxis\source\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.Register.resources
 >>>>>>> 177962a7d2a2e0aca4fc09e2b366a14ba66e2c0a
+C:\Users\slema\source\repos\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.Register.resources
