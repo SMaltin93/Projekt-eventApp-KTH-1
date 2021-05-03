@@ -48,20 +48,27 @@ namespace KTHare
             using var con = new MySqlConnection(cs);
             con.Open();
 
-            var sql = "SELECT * FROM login_table WHERE mail='"+ mail+"'";
+            var sql = "SELECT * FROM login_table WHERE mail='"+mail+"'";
             using var cmd = new MySqlCommand(sql, con);
 
             using MySqlDataReader rdr = cmd.ExecuteReader();
 
             if (rdr.Read())
             {
-                MessageBox.Show("Welcome");
+                MessageBox.Show("Welcome " + rdr.GetString("name"));
             }
             else
             {
                 MessageBox.Show("Account not found");
             }
 
+        }
+
+        private void linklbl_createaccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var form = new Register();
+            this.Hide();
+            form.Show();
         }
     }
 }
