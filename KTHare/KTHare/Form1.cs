@@ -141,7 +141,7 @@ namespace KTHare
 
           //  }else if (newPassword != "")
            // {
-                MessageBox.Show("Password incorrect", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               // MessageBox.Show("Password incorrect", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
            // } 
 
