@@ -31,9 +31,7 @@ namespace KTHare
             if (rdr.Read())
             {
                 if (rdr.GetString("password") == password)
-                {
-                    MessageBox.Show("Welcome " + rdr.GetString("name") + "!");
-                    
+                {   
                     User.mail = rdr.GetString("mail");
                     User.name = rdr.GetString("name");
 
