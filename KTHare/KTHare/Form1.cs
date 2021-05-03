@@ -29,6 +29,7 @@ namespace KTHare
       
         private void sendButt_Click(object sender, EventArgs e)
         {
+            /*
 
             if (emailControl(mailBox.Text) == true && !(String.IsNullOrEmpty(mailBox.Text)))
             {
@@ -55,6 +56,7 @@ namespace KTHare
                 }
                
             }
+            */
 
         }
 
@@ -130,22 +132,19 @@ namespace KTHare
         { 
 
 
-            if ( newPassword == passBox.Text && mailBox.Text == newUserName)
-            {
+           // if ( newPassword == passBox.Text && mailBox.Text == newUserName)
+          //  {
                 
                 EventsMenu start = new EventsMenu();
                 this.Hide();
                 start.Show();
 
-            }else if (newPassword != "")
-            {
+          //  }else if (newPassword != "")
+           // {
                 MessageBox.Show("Password incorrect", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
-            } else
-            {
-                MessageBox.Show("It's no password, check your email and type your password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
+           // } 
+
         }
 
         private void exiteButt_Click(object sender, EventArgs e)
@@ -183,9 +182,6 @@ namespace KTHare
             return send_rand;
         }
          
-
-
-
 
     private void label2_Click(object sender, EventArgs e)
         {
