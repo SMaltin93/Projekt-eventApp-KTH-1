@@ -14,5 +14,13 @@ namespace KTHare
         {
             InitializeComponent();
         }
+
+        private void EventsMenu_Load(object sender, EventArgs e)
+        {
+            lbl_welcome.Text = "Welcome, " + User.name + "!";
+
+
+
+        }
     }
 }
