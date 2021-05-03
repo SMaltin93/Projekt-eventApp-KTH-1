@@ -40,3 +40,4 @@ C:\Users\maxis\source\KTHare\KTHare\KTHare\bin\Debug\netcoreapp3.1\Ubiety.Dns.Co
 C:\Users\maxis\source\KTHare\KTHare\KTHare\bin\Debug\netcoreapp3.1\Zstandard.Net.dll
 C:\Users\maxis\source\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.csproj.CopyComplete
 C:\Users\maxis\source\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.Register.resources
+C:\Users\maxis\source\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.CreateEvent.resources

@@ -18,6 +18,12 @@ namespace KTHare
 
         private void EventsMenu_Load(object sender, EventArgs e)
         {
+            loadEvents();
+            timer.Start();
+        }
+
+        private void loadEvents()
+        {
             Database db = new Database();
 
             var sql = "SELECT * FROM event_table";
@@ -27,8 +33,21 @@ namespace KTHare
 
             while (rdr.Read())
             {
-                lbl_welcome.Text += "\n" + rdr.GetString(1) + " - " + rdr.GetString(2) + " (" + (rdr.GetInt32(3)).ToString() + ")";
+                lbl_welcome.Text += "\n" + rdr.GetString(1) + " - " + rdr.GetString(2) + " (" + (rdr.GetInt32(3)).ToString() + ")"; //Only temp
             }
+        }
+
+
+        private void btn_createEvent_Click(object sender, EventArgs e)
+        {
+            var form = new CreateEvent();
+            form.Show();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            lbl_welcome.Text = "";
+            loadEvents();
         }
     }
 }
