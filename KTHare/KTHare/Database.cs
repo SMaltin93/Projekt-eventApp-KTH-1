@@ -22,11 +22,6 @@ namespace KTHare
             {
                 MessageBox.Show("Connection Error!\n" + ex.Message);
             }
-            finally
-            {
-                con.Close();
-            }
-
         }
     }
 }

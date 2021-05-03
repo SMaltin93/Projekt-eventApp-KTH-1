@@ -11,7 +11,6 @@ namespace KTHare
 {
     public partial class Login : Form
     {
-        Database db;
         public Login()
         {
             InitializeComponent();
@@ -19,6 +18,8 @@ namespace KTHare
 
         private void btn_login_Click(object sender, EventArgs e)
         {
+            Database db = new Database();
+
             string mail = tb_mail.Text;
             string password = tb_password.Text;
 
@@ -71,7 +72,7 @@ namespace KTHare
 
         private void Login_Load(object sender, EventArgs e)
         {
-            db = new Database();
+            Database db = new Database(); //Checks if the database is online - hosted on Max-Desktop pc
         }
     }
 }
