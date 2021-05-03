@@ -23,7 +23,7 @@ namespace KTHare
             string mail = tb_mail.Text;
             string password = tb_password.Text;
 
-            var sql = "SELECT * FROM login_table WHERE mail='"+mail+"'";
+            var sql = "SELECT * FROM login_table WHERE mail='"+ mail +"'";
             using var cmd = new MySqlCommand(sql, db.con);
 
             using MySqlDataReader rdr = cmd.ExecuteReader();
@@ -31,7 +31,8 @@ namespace KTHare
             if (rdr.Read())
             {
                 if (rdr.GetString("password") == password)
-                {   
+                {
+                    User.id = rdr.GetInt32("id");
                     User.mail = rdr.GetString("mail");
                     User.name = rdr.GetString("name");
 

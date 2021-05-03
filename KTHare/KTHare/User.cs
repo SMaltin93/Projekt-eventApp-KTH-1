@@ -6,7 +6,8 @@ namespace KTHare
 {
     static class User
     {
-        public static string name = "";
-        public static string mail = "";
+        public static int id;
+        public static string name;
+        public static string mail;
     }
 }
