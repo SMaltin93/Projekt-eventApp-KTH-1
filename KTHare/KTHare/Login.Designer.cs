@@ -43,7 +43,7 @@ namespace KTHare
             this.btn_login.Location = new System.Drawing.Point(231, 64);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(75, 23);
-            this.btn_login.TabIndex = 2;
+            this.btn_login.TabIndex = 3;
             this.btn_login.Text = "Logga in";
             this.btn_login.UseVisualStyleBackColor = true;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
@@ -87,7 +87,7 @@ namespace KTHare
             this.linklbl_createaccount.Location = new System.Drawing.Point(130, 68);
             this.linklbl_createaccount.Name = "linklbl_createaccount";
             this.linklbl_createaccount.Size = new System.Drawing.Size(95, 15);
-            this.linklbl_createaccount.TabIndex = 5;
+            this.linklbl_createaccount.TabIndex = 4;
             this.linklbl_createaccount.TabStop = true;
             this.linklbl_createaccount.Text = "Har inget konto?";
             this.linklbl_createaccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklbl_createaccount_LinkClicked);
@@ -98,7 +98,7 @@ namespace KTHare
             this.cb_showPassword.Location = new System.Drawing.Point(312, 39);
             this.cb_showPassword.Name = "cb_showPassword";
             this.cb_showPassword.Size = new System.Drawing.Size(15, 14);
-            this.cb_showPassword.TabIndex = 6;
+            this.cb_showPassword.TabIndex = 2;
             this.cb_showPassword.UseVisualStyleBackColor = true;
             this.cb_showPassword.CheckedChanged += new System.EventHandler(this.cb_showPassword_CheckedChanged);
             // 
@@ -119,6 +119,7 @@ namespace KTHare
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

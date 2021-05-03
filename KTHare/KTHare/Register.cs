@@ -30,11 +30,8 @@ namespace KTHare
             string mail = tb_mail.Text;
             string password = tb_password.Text;
 
-            using var con = new MySqlConnection(db.cs);
-            con.Open();
-
             var sql = "INSERT INTO login_table(id, name, mail, password) VALUES(NULL, @name, @mail, @password)";
-            using var cmd = new MySqlCommand(sql, con);
+            using var cmd = new MySqlCommand(sql, db.con);
 
             cmd.Parameters.AddWithValue("@name", name);
             cmd.Parameters.AddWithValue("@mail", mail);

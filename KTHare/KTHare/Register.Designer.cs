@@ -46,7 +46,7 @@ namespace KTHare
             this.linklbl_login.Location = new System.Drawing.Point(111, 97);
             this.linklbl_login.Name = "linklbl_login";
             this.linklbl_login.Size = new System.Drawing.Size(115, 15);
-            this.linklbl_login.TabIndex = 11;
+            this.linklbl_login.TabIndex = 5;
             this.linklbl_login.TabStop = true;
             this.linklbl_login.Text = "Har redan ett konto?";
             this.linklbl_login.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklbl_login_LinkClicked);
@@ -74,21 +74,21 @@ namespace KTHare
             this.tb_mail.Location = new System.Drawing.Point(75, 6);
             this.tb_mail.Name = "tb_mail";
             this.tb_mail.Size = new System.Drawing.Size(231, 23);
-            this.tb_mail.TabIndex = 6;
+            this.tb_mail.TabIndex = 0;
             // 
             // tb_name
             // 
             this.tb_name.Location = new System.Drawing.Point(76, 35);
             this.tb_name.Name = "tb_name";
             this.tb_name.Size = new System.Drawing.Size(231, 23);
-            this.tb_name.TabIndex = 7;
+            this.tb_name.TabIndex = 1;
             // 
             // btn_register
             // 
             this.btn_register.Location = new System.Drawing.Point(232, 93);
             this.btn_register.Name = "btn_register";
             this.btn_register.Size = new System.Drawing.Size(75, 23);
-            this.btn_register.TabIndex = 8;
+            this.btn_register.TabIndex = 4;
             this.btn_register.Text = "Skapa";
             this.btn_register.UseVisualStyleBackColor = true;
             this.btn_register.Click += new System.EventHandler(this.btn_register_Click);
@@ -98,7 +98,7 @@ namespace KTHare
             this.tb_password.Location = new System.Drawing.Point(76, 64);
             this.tb_password.Name = "tb_password";
             this.tb_password.Size = new System.Drawing.Size(231, 23);
-            this.tb_password.TabIndex = 12;
+            this.tb_password.TabIndex = 2;
             this.tb_password.UseSystemPasswordChar = true;
             // 
             // lbl_password
@@ -116,7 +116,7 @@ namespace KTHare
             this.cb_showPassword.Location = new System.Drawing.Point(313, 68);
             this.cb_showPassword.Name = "cb_showPassword";
             this.cb_showPassword.Size = new System.Drawing.Size(15, 14);
-            this.cb_showPassword.TabIndex = 14;
+            this.cb_showPassword.TabIndex = 3;
             this.cb_showPassword.UseVisualStyleBackColor = true;
             this.cb_showPassword.CheckedChanged += new System.EventHandler(this.cb_showPassword_CheckedChanged);
             // 

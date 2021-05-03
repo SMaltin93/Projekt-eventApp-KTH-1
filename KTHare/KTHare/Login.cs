@@ -11,6 +11,7 @@ namespace KTHare
 {
     public partial class Login : Form
     {
+        Database db;
         public Login()
         {
             InitializeComponent();
@@ -18,16 +19,11 @@ namespace KTHare
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            Database db = new Database();
-
             string mail = tb_mail.Text;
             string password = tb_password.Text;
 
-            using var con = new MySqlConnection(db.cs);
-            con.Open();
-
             var sql = "SELECT * FROM login_table WHERE mail='"+mail+"'";
-            using var cmd = new MySqlCommand(sql, con);
+            using var cmd = new MySqlCommand(sql, db.con);
 
             using MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -71,6 +67,11 @@ namespace KTHare
             {
                 tb_password.UseSystemPasswordChar = true;
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            db = new Database();
         }
     }
 }
