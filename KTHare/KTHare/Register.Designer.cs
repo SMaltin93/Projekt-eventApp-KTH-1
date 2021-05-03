@@ -90,6 +90,7 @@ namespace KTHare
             this.btn_register.TabIndex = 8;
             this.btn_register.Text = "Skapa";
             this.btn_register.UseVisualStyleBackColor = true;
+            this.btn_register.Click += new System.EventHandler(this.btn_register_Click);
             // 
             // tb_password
             // 
@@ -97,6 +98,7 @@ namespace KTHare
             this.tb_password.Name = "tb_password";
             this.tb_password.Size = new System.Drawing.Size(231, 23);
             this.tb_password.TabIndex = 12;
+            this.tb_password.UseSystemPasswordChar = true;
             // 
             // lbl_password
             // 
@@ -138,10 +140,6 @@ namespace KTHare
         private System.Windows.Forms.TextBox tb_name;
         private System.Windows.Forms.Button btn_register;
         private System.Windows.Forms.TextBox tb_password;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_password;
-        private System.Windows.Forms.TextBox s;
-        private System.Windows.Forms.TextBox tr;
-        private System.Windows.Forms.TextBox tb;
     }
 }

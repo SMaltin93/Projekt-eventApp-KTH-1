@@ -33,7 +33,7 @@ namespace KTHare
             this.tb_password = new System.Windows.Forms.TextBox();
             this.tb_mail = new System.Windows.Forms.TextBox();
             this.lbl_mail = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_password = new System.Windows.Forms.Label();
             this.linklbl_createaccount = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
@@ -53,6 +53,7 @@ namespace KTHare
             this.tb_password.Name = "tb_password";
             this.tb_password.Size = new System.Drawing.Size(231, 23);
             this.tb_password.TabIndex = 1;
+            this.tb_password.UseSystemPasswordChar = true;
             // 
             // tb_mail
             // 
@@ -70,14 +71,14 @@ namespace KTHare
             this.lbl_mail.TabIndex = 3;
             this.lbl_mail.Text = "KTH-mail";
             // 
-            // label1
+            // lbl_password
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 15);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Lösenord";
+            this.lbl_password.AutoSize = true;
+            this.lbl_password.Location = new System.Drawing.Point(13, 38);
+            this.lbl_password.Name = "lbl_password";
+            this.lbl_password.Size = new System.Drawing.Size(56, 15);
+            this.lbl_password.TabIndex = 4;
+            this.lbl_password.Text = "Lösenord";
             // 
             // linklbl_createaccount
             // 
@@ -96,7 +97,7 @@ namespace KTHare
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(318, 91);
             this.Controls.Add(this.linklbl_createaccount);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_password);
             this.Controls.Add(this.lbl_mail);
             this.Controls.Add(this.tb_mail);
             this.Controls.Add(this.tb_password);
@@ -106,7 +107,6 @@ namespace KTHare
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,14 +114,11 @@ namespace KTHare
 
         #endregion
 
-        private System.Windows.Forms.Button tgbb;
         private System.Windows.Forms.TextBox tb_password;
         private System.Windows.Forms.TextBox tb_mail;
         private System.Windows.Forms.Label lbl_mail;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button o;
-        private System.Windows.Forms.Button s;
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.LinkLabel linklbl_createaccount;
+        private System.Windows.Forms.Label lbl_password;
     }
 }
