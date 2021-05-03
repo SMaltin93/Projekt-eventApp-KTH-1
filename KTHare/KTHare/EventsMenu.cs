@@ -46,8 +46,8 @@ namespace KTHare
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            lbl_welcome.Text = "";
-            loadEvents();
+            lbl_welcome.Text = ""; //Temporär lösning
+            loadEvents();   //Ska se till att skriva om denna sen, vill skapa som olika element istället för enbart en text med all information.
         }
     }
 }

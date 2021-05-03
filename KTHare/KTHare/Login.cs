@@ -23,7 +23,7 @@ namespace KTHare
             string mail = tb_mail.Text;
             string password = tb_password.Text;
 
-            var sql = "SELECT * FROM login_table WHERE mail='"+ mail +"'";
+            var sql = "SELECT * FROM login_table WHERE mail='" + mail + "'";
             using var cmd = new MySqlCommand(sql, db.con);
 
             using MySqlDataReader rdr = cmd.ExecuteReader();
@@ -41,12 +41,12 @@ namespace KTHare
                     form.Show();
                 } else
                 {
-                    MessageBox.Show("Wrong password!");
+                    MessageBox.Show("Fel lösenord!");
                 }
 
             } else
             {
-                MessageBox.Show("Account not found. Try again!");
+                MessageBox.Show("Konto hittades inte. Försök igen!");
             }
 
         }
