@@ -127,7 +127,5 @@ namespace KTHare
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_location;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tb_d;
-        private System.Windows.Forms.TextBox l;
     }
 }

@@ -8,7 +8,7 @@ namespace KTHare
 {
     class Database
     {
-        public string cs = @"server=155.4.6.242;userid=username;password=password;database=kthare";
+        public string cs = @KTHare.Properties.Settings.Default.ConnectionString;
         public MySqlConnection con;
 
         public Database()

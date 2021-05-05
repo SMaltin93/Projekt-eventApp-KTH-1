@@ -47,7 +47,7 @@ namespace KTHare
             // 
             // btn_createEvent
             // 
-            this.btn_createEvent.Location = new System.Drawing.Point(546, 415);
+            this.btn_createEvent.Location = new System.Drawing.Point(12, 415);
             this.btn_createEvent.Name = "btn_createEvent";
             this.btn_createEvent.Size = new System.Drawing.Size(242, 23);
             this.btn_createEvent.TabIndex = 1;
@@ -64,7 +64,7 @@ namespace KTHare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(265, 450);
             this.Controls.Add(this.btn_createEvent);
             this.Controls.Add(this.lbl_welcome);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -81,7 +81,6 @@ namespace KTHare
 
         private System.Windows.Forms.Label lbl_welcome;
         private System.Windows.Forms.Button btn_createEvent;
-        private System.Windows.Forms.Button r;
         private System.Windows.Forms.Timer timer;
     }
 }

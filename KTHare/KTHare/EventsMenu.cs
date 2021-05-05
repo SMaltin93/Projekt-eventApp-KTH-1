@@ -22,6 +22,9 @@ namespace KTHare
             timer.Start();
         }
 
+        /**
+        * Laddar in eventsen från databasen
+        */
         private void loadEvents()
         {
             Database db = new Database();
@@ -36,7 +39,6 @@ namespace KTHare
                 lbl_welcome.Text += "\n" + rdr.GetString(1) + " - " + rdr.GetString(2) + " (" + (rdr.GetInt32(3)).ToString() + ")"; //Only temp
             }
         }
-
 
         private void btn_createEvent_Click(object sender, EventArgs e)
         {
