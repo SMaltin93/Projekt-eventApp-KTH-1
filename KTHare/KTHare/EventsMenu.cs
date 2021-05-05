@@ -36,6 +36,11 @@ namespace KTHare
 
             while (rdr.Read())
             {
+                Button newButton = new Button();
+                newButton.Text = "Created Button";
+                newButton.Location = new Point(70, 70);
+                newButton.Size = new Size(50, 100);
+
                 lbl_welcome.Text += "\n" + rdr.GetString(1) + " - " + rdr.GetString(2) + " (" + (rdr.GetInt32(3)).ToString() + ")"; //Only temp
             }
         }
@@ -50,6 +55,11 @@ namespace KTHare
         {
             lbl_welcome.Text = ""; //Temporär lösning
             loadEvents();   //Ska se till att skriva om denna sen, vill skapa som olika element istället för enbart en text med all information.
+        }
+
+        private void EventsMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

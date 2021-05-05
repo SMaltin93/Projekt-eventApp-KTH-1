@@ -73,5 +73,10 @@ namespace KTHare
         {
             Database db = new Database(); //Checks if the database is online - hosted on Max-Desktop pc
         }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

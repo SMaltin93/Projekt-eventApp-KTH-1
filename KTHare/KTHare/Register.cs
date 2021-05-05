@@ -58,5 +58,10 @@ namespace KTHare
                 tb_password.UseSystemPasswordChar = true;
             }
         }
+
+        private void Register_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
