@@ -44,6 +44,7 @@ namespace KTHare
                 label.Location = new Point(10, i-5);
 
                 Button button = new Button();
+                button.Click += new EventHandler(button_Click);
                 button.Location = new Point(300, i);
                 button.Text = ">";
                 button.AutoSize = true;
@@ -54,6 +55,12 @@ namespace KTHare
 
                 i += 50;
             }
+        }
+
+        private void button_Click(object sender, System.EventArgs e)
+        {
+            var form = new EventInformation();
+            form.Show();
         }
 
         private void btn_createEvent_Click(object sender, EventArgs e)
