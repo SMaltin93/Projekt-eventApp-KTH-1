@@ -34,14 +34,25 @@ namespace KTHare
 
             using MySqlDataReader rdr = cmd.ExecuteReader();
 
+
+            int i = 0;
             while (rdr.Read())
             {
-                Button newButton = new Button();
-                newButton.Text = "Created Button";
-                newButton.Location = new Point(70, 70);
-                newButton.Size = new Size(50, 100);
+                Label label = new Label();
+                label.AutoSize = true;
+                label.Text = "\n" + rdr.GetString(1) + " - " + rdr.GetString(2) + " (" + (rdr.GetInt32(3)).ToString() + ")";
+                label.Location = new Point(10, i-5);
 
-                lbl_welcome.Text += "\n" + rdr.GetString(1) + " - " + rdr.GetString(2) + " (" + (rdr.GetInt32(3)).ToString() + ")"; //Only temp
+                Button button = new Button();
+                button.Location = new Point(300, i);
+                button.Text = ">";
+                button.AutoSize = true;
+                button.Padding = new Padding(6);
+
+                this.Controls.Add(label);
+                this.Controls.Add(button);
+
+                i += 50;
             }
         }
 

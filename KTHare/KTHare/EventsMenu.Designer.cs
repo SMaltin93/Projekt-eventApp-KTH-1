@@ -40,14 +40,14 @@ namespace KTHare
             this.lbl_welcome.AutoSize = true;
             this.lbl_welcome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbl_welcome.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_welcome.Location = new System.Drawing.Point(12, -51);
+            this.lbl_welcome.Location = new System.Drawing.Point(11, -51);
             this.lbl_welcome.Name = "lbl_welcome";
             this.lbl_welcome.Size = new System.Drawing.Size(0, 45);
             this.lbl_welcome.TabIndex = 0;
             // 
             // btn_createEvent
             // 
-            this.btn_createEvent.Location = new System.Drawing.Point(673, 415);
+            this.btn_createEvent.Location = new System.Drawing.Point(73, 415);
             this.btn_createEvent.Name = "btn_createEvent";
             this.btn_createEvent.Size = new System.Drawing.Size(242, 23);
             this.btn_createEvent.TabIndex = 1;
@@ -64,7 +64,7 @@ namespace KTHare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 450);
+            this.ClientSize = new System.Drawing.Size(384, 450);
             this.Controls.Add(this.btn_createEvent);
             this.Controls.Add(this.lbl_welcome);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
