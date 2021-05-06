@@ -46,19 +46,20 @@ namespace KTHare
         {
             string name = rdr.GetString(1);
             string participantNames = rdr.GetString(2);
-            string participants = rdr.GetInt32(3).ToString();
+            int participants = rdr.GetInt32(3);
             string location = rdr.GetString(4);
             string description = rdr.GetString(5);
+            string time = rdr.GetString(6);
 
 
             Label label = new Label();
             label.AutoSize = true;
-            label.Text = "\n" + name + " - " + participantNames + " (" + participants + ")";
+            label.Text = "\n" + name + " - " + participantNames + " (" + participants + ") - " + time;
             label.Location = new Point(10, y - 5);
 
             Button button = new Button();
-            button.Click += new EventHandler((s, e) => button_Click(s, e, name, description, participantNames, participants, location));
-            button.Location = new Point(300, y);
+            button.Click += new EventHandler((s, e) => button_Click(s, e, name, description, participantNames, participants, location, time));
+            button.Location = new Point(320, y);
             button.Text = ">";
             button.AutoSize = true;
             button.Padding = new Padding(6);
@@ -67,9 +68,9 @@ namespace KTHare
             this.Controls.Add(button);
         }
 
-        private void button_Click(object sender, System.EventArgs e, string name, string description, string participantNames, string participants, string location)
+        private void button_Click(object sender, System.EventArgs e, string name, string description, string participantNames, int participants, string location, string time)
         {
-            var form = new EventInformation(name, description, participantNames, participants, location);
+            var form = new EventInformation(name, description, participantNames, participants, location, time);
             form.Show();
         }
 

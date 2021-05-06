@@ -49,7 +49,6 @@ namespace KTHare
             this.Hide();
             form.Show();
         }
-
         private void cb_showPassword_CheckedChanged(object sender, EventArgs e)
         {
             if (cb_showPassword.Checked == true)
@@ -83,14 +82,10 @@ namespace KTHare
                     errorProvider1.Clear();
                     if (!string.IsNullOrEmpty(tb_password.Text) && !string.IsNullOrEmpty(tb_name.Text))
                     {
-
                         btn_register.Enabled = true;
                         break;
-
                     }
-
                     break;
-
                 }
                 else if (string.IsNullOrEmpty(tb_mail.Text))
                 {
@@ -103,15 +98,11 @@ namespace KTHare
                     break;
                 }
             }
-
         }
-
         private void tb_name_TextChanged(object sender, EventArgs e)
         {
-
             while (correctInput == true)
             {
-
                 if ((string.IsNullOrEmpty(tb_name.Text) || string.IsNullOrEmpty(tb_password.Text)))
                 {
                     btn_register.Enabled = false;
@@ -122,16 +113,13 @@ namespace KTHare
                     btn_register.Enabled = true;
                     break;
                 }
-
             }
-
         }
 
         private void tb_password_TextChanged(object sender, EventArgs e)
         {
             while (correctInput == true)
             {
-
                 if (string.IsNullOrEmpty(tb_password.Text) || string.IsNullOrEmpty(tb_name.Text))
                 {
                     btn_register.Enabled = false;
@@ -142,7 +130,6 @@ namespace KTHare
                     btn_register.Enabled = true;
                     break;
                 }
-
             }
             while (correctInput != true && string.IsNullOrEmpty(tb_name.Text))
             {
@@ -153,19 +140,12 @@ namespace KTHare
         /*
          * ################ Help functions ###########
          */
-
-
         /**
          *@return true if the user has a kth-email, false otherwise 
          */
         public bool emailControl(String userMail)
         {
             return Regex.IsMatch(userMail, @"^([\w\.\-]+)@((?i)[kth]+)((\.(\w)(?i)[se])+)$");
-        }
-
-        private void Register_Load(object sender, EventArgs e)
-        {
-          
         }
     }
 }

@@ -22,16 +22,18 @@ namespace KTHare
             string name = tb_name.Text;
             string location = tb_location.Text;
             string description = tb_description.Text;
+            string time = cb_time.Text;
 
             if (name != "" && location != "" && description != "")
             {
-                var sql = "INSERT INTO event_table(id, name, participantNames, location, description) VALUES(NULL, @name, @participantNames, @location, @description)";
+                var sql = "INSERT INTO event_table(id, name, participantNames, location, description, time) VALUES(NULL, @name, @participantNames, @location, @description, @time)";
                 using var cmd = new MySqlCommand(sql, db.con);
 
                 cmd.Parameters.AddWithValue("@name", name);
                 cmd.Parameters.AddWithValue("@participantNames", User.name);
                 cmd.Parameters.AddWithValue("@location", location);
                 cmd.Parameters.AddWithValue("@description", description);
+                cmd.Parameters.AddWithValue("@time", time);
                 cmd.Prepare();
 
                 cmd.ExecuteNonQuery();
@@ -42,6 +44,24 @@ namespace KTHare
             else
             {
                 MessageBox.Show("Behöver mer information om eventet. Försök igen!");
+            }
+        }
+
+        private void CreateEvent_Load(object sender, EventArgs e)
+        {
+            cb_time.DisplayMember = "Time";
+            cb_time.ValueMember = "Value";
+
+            for (int i = 0; i <= 24; i++)
+            {
+                if (i < 10)
+                {
+                    cb_time.Items.Add("0" + i + ":00");
+                }
+                else
+                {
+                    cb_time.Items.Add(i + ":00");
+                }
             }
         }
     }
