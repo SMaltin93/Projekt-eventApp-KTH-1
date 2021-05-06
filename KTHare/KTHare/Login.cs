@@ -11,19 +11,22 @@ namespace KTHare
 {
     public partial class Login : Form
     {
+        Register check = new Register(); 
         public Login()
         {
             InitializeComponent();
+            btn_login.Enabled = false;
         }
 
         private void btn_login_Click(object sender, EventArgs e)
         {
+          
             Database db = new Database();
 
             string mail = tb_mail.Text;
             string password = tb_password.Text;
 
-            var sql = "SELECT * FROM login_table WHERE mail='"+mail+"'";
+            var sql = "SELECT * FROM login_table WHERE mail='" + mail + "'";
             using var cmd = new MySqlCommand(sql, db.con);
 
             using MySqlDataReader rdr = cmd.ExecuteReader();
@@ -73,6 +76,27 @@ namespace KTHare
         private void Login_Load(object sender, EventArgs e)
         {
             Database db = new Database(); //Checks if the database is online - hosted on Max-Desktop pc
+        }
+
+        private void tb_mail_TextChanged(object sender, EventArgs e)
+        {
+            while ( true)
+            {
+                if (check.emailControl(tb_mail.Text) == true)
+                {
+                    btn_login.Enabled = true;
+                    break;
+                }
+
+                 btn_login.Enabled = false;
+                 break;
+            }
+
+        }
+
+        private void tb_password_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

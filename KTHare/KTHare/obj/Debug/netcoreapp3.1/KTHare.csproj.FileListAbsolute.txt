@@ -27,7 +27,6 @@ C:\Users\slema\source\repos\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.
 C:\Users\slema\source\repos\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.pdb
 C:\Users\slema\source\repos\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.genruntimeconfig.cache
 C:\Users\slema\source\repos\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.EventsMenu.resources
-C:\Users\slema\source\repos\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.Form1.resources
 C:\Users\maxis\source\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.EventsMenu.resources
 C:\Users\maxis\source\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.Login.resources
 C:\Users\maxis\source\KTHare\KTHare\KTHare\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
@@ -39,5 +38,20 @@ C:\Users\maxis\source\KTHare\KTHare\KTHare\bin\Debug\netcoreapp3.1\MySql.Data.dl
 C:\Users\maxis\source\KTHare\KTHare\KTHare\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
 C:\Users\maxis\source\KTHare\KTHare\KTHare\bin\Debug\netcoreapp3.1\Zstandard.Net.dll
 C:\Users\maxis\source\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.csproj.CopyComplete
+<<<<<<< HEAD
+C:\Users\slema\source\repos\KTHare\KTHare\KTHare\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\slema\source\repos\KTHare\KTHare\KTHare\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+C:\Users\slema\source\repos\KTHare\KTHare\KTHare\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
+C:\Users\slema\source\repos\KTHare\KTHare\KTHare\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.Streams.dll
+C:\Users\slema\source\repos\KTHare\KTHare\KTHare\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.dll
+C:\Users\slema\source\repos\KTHare\KTHare\KTHare\bin\Debug\netcoreapp3.1\MySql.Data.dll
+C:\Users\slema\source\repos\KTHare\KTHare\KTHare\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
+C:\Users\slema\source\repos\KTHare\KTHare\KTHare\bin\Debug\netcoreapp3.1\Zstandard.Net.dll
+C:\Users\slema\source\repos\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.Login.resources
+C:\Users\slema\source\repos\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.csproj.CopyComplete
+=======
 C:\Users\maxis\source\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.Register.resources
 C:\Users\maxis\source\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.EventInformation.resources
+>>>>>>> 177962a7d2a2e0aca4fc09e2b366a14ba66e2c0a
+C:\Users\slema\source\repos\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.Register.resources
+>>>>>>> 62c9677bc41852b874460c93bc4979540803e243
