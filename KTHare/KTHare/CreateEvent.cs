@@ -23,19 +23,26 @@ namespace KTHare
             string location = tb_location.Text;
             string description = tb_description.Text;
 
-            var sql = "INSERT INTO event_table(id, name, participantNames, location, description) VALUES(NULL, @name, @participantNames, @location, @description)";
-            using var cmd = new MySqlCommand(sql, db.con);
+            if (name != "" && location != "" && description != "")
+            {
+                var sql = "INSERT INTO event_table(id, name, participantNames, location, description) VALUES(NULL, @name, @participantNames, @location, @description)";
+                using var cmd = new MySqlCommand(sql, db.con);
 
-            cmd.Parameters.AddWithValue("@name", name);
-            cmd.Parameters.AddWithValue("@participantNames", User.name);
-            cmd.Parameters.AddWithValue("@location", location);
-            cmd.Parameters.AddWithValue("@description", description);
-            cmd.Prepare();
+                cmd.Parameters.AddWithValue("@name", name);
+                cmd.Parameters.AddWithValue("@participantNames", User.name);
+                cmd.Parameters.AddWithValue("@location", location);
+                cmd.Parameters.AddWithValue("@description", description);
+                cmd.Prepare();
 
-            cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
 
-            MessageBox.Show("Event: " + name + " created!");
-            this.Hide();
+                MessageBox.Show("Event: " + name + " skapades!");
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Behöver mer information om eventet. Försök igen!");
+            }
         }
     }
 }

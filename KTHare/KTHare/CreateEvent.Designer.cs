@@ -109,6 +109,9 @@ namespace KTHare
             this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.tb_name);
             this.Controls.Add(this.btn_createEvent);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CreateEvent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateEvent";

@@ -30,20 +30,9 @@ namespace KTHare
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lbl_welcome = new System.Windows.Forms.Label();
             this.btn_createEvent = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
-            // 
-            // lbl_welcome
-            // 
-            this.lbl_welcome.AutoSize = true;
-            this.lbl_welcome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl_welcome.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_welcome.Location = new System.Drawing.Point(11, -51);
-            this.lbl_welcome.Name = "lbl_welcome";
-            this.lbl_welcome.Size = new System.Drawing.Size(0, 45);
-            this.lbl_welcome.TabIndex = 0;
             // 
             // btn_createEvent
             // 
@@ -66,21 +55,20 @@ namespace KTHare
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 450);
             this.Controls.Add(this.btn_createEvent);
-            this.Controls.Add(this.lbl_welcome);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EventsMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EventsMenu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EventsMenu_FormClosed);
             this.Load += new System.EventHandler(this.EventsMenu_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbl_welcome;
         private System.Windows.Forms.Button btn_createEvent;
         private System.Windows.Forms.Timer timer;
     }
