@@ -6,14 +6,17 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 
 namespace KTHare
 {
     public partial class Register : Form
     {
+        private bool correctInput;
         public Register()
         {
             InitializeComponent();
+            btn_register.Enabled = false;
         }
 
         private void linklbl_login_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -40,7 +43,7 @@ namespace KTHare
 
             cmd.ExecuteNonQuery();
 
-            MessageBox.Show("Account " + name + " created!");
+            MessageBox.Show("Konto " + name + " skapades!");
 
             var form = new Login();
             this.Hide();
@@ -58,10 +61,111 @@ namespace KTHare
                 tb_password.UseSystemPasswordChar = true;
             }
         }
-
         private void Register_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
+        }
+        private void tb_mail_TextChanged(object sender, EventArgs e)
+        {
+            string inputEmail;
+            correctInput = false;
+            while (correctInput != true)
+            {
+                inputEmail = tb_mail.Text;
+                correctInput = emailControl(inputEmail);
+                btn_register.Enabled = false;
+                break;
+            }
+            while (true)
+            {
+                if (correctInput == true )
+                {
+                    errorProvider1.Clear();
+                    if (!string.IsNullOrEmpty(tb_password.Text) && !string.IsNullOrEmpty(tb_name.Text))
+                    {
+
+                        btn_register.Enabled = true;
+                        break;
+
+                    }
+
+                    break;
+
+                }
+                else if (string.IsNullOrEmpty(tb_mail.Text))
+                {
+                    errorProvider1.SetError(this.tb_mail, "Enter your KTH email");
+                    break;
+                }
+                else
+                {
+                    errorProvider1.SetError(this.tb_mail, "You are not KTH:are, please try again");
+                    break;
+                }
+            }
+
+        }
+
+        private void tb_name_TextChanged(object sender, EventArgs e)
+        {
+
+            while (correctInput == true)
+            {
+
+                if ((string.IsNullOrEmpty(tb_name.Text) || string.IsNullOrEmpty(tb_password.Text)))
+                {
+                    btn_register.Enabled = false;
+                    break;
+                }
+                else
+                {
+                    btn_register.Enabled = true;
+                    break;
+                }
+
+            }
+
+        }
+
+        private void tb_password_TextChanged(object sender, EventArgs e)
+        {
+            while (correctInput == true)
+            {
+
+                if (string.IsNullOrEmpty(tb_password.Text) || string.IsNullOrEmpty(tb_name.Text))
+                {
+                    btn_register.Enabled = false;
+                    break;
+                }
+                else
+                {
+                    btn_register.Enabled = true;
+                    break;
+                }
+
+            }
+            while (correctInput != true && string.IsNullOrEmpty(tb_name.Text))
+            {
+                btn_register.Enabled = false;
+                break;
+            }
+        }
+        /*
+         * ################ Help functions ###########
+         */
+
+
+        /**
+         *@return true if the user has a kth-email, false otherwise 
+         */
+        public bool emailControl(String userMail)
+        {
+            return Regex.IsMatch(userMail, @"^([\w\.\-]+)@((?i)[kth]+)((\.(\w)(?i)[se])+)$");
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+          
         }
     }
 }

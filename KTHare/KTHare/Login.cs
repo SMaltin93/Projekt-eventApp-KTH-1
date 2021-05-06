@@ -11,13 +11,16 @@ namespace KTHare
 {
     public partial class Login : Form
     {
+        Register check = new Register(); 
         public Login()
         {
             InitializeComponent();
+            btn_login.Enabled = false;
         }
 
         private void btn_login_Click(object sender, EventArgs e)
         {
+          
             Database db = new Database();
 
             string mail = tb_mail.Text;
@@ -77,6 +80,25 @@ namespace KTHare
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
+        }
+        private void tb_mail_TextChanged(object sender, EventArgs e)
+        {
+            while ( true)
+            {
+                if (check.emailControl(tb_mail.Text) == true)
+                {
+                    btn_login.Enabled = true;
+                    break;
+                }
+
+                 btn_login.Enabled = false;
+                 break;
+            }
+
+        }
+
+        private void tb_password_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }
