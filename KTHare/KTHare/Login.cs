@@ -96,7 +96,6 @@ namespace KTHare
             }
 
         }
-
         private void tb_password_TextChanged(object sender, EventArgs e)
         {
         }
