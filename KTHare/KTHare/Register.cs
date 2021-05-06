@@ -40,7 +40,7 @@ namespace KTHare
 
             cmd.ExecuteNonQuery();
 
-            MessageBox.Show("Account " + name + " created!");
+            MessageBox.Show("Konto " + name + " skapades!");
 
             var form = new Login();
             this.Hide();

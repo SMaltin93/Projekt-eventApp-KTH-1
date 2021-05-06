@@ -134,6 +134,9 @@ namespace KTHare
             this.Controls.Add(this.tb_mail);
             this.Controls.Add(this.tb_name);
             this.Controls.Add(this.btn_register);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";

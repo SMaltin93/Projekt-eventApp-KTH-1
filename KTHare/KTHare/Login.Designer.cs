@@ -114,7 +114,9 @@ namespace KTHare
             this.Controls.Add(this.tb_mail);
             this.Controls.Add(this.tb_password);
             this.Controls.Add(this.btn_login);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
