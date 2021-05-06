@@ -7,11 +7,20 @@ using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
+using System.Net.Mail;
 
 namespace KTHare
 {
+
+   
     public partial class Register : Form
     {
+        public static string GetEmail;
+        public static string GetPassword;
+        public static string GetName;
+        public static string GetVerfication;
+
+
         private bool correctInput;
         public Register()
         {
@@ -28,6 +37,41 @@ namespace KTHare
 
         private void btn_register_Click(object sender, EventArgs e)
         {
+            //if (emailControl(tb_mail.Text) == true && !(String.IsNullOrEmpty(tb_mail.Text)))
+            // {
+            GetEmail = this.tb_mail.Text;
+            GetName = this.tb_name.Text;
+            GetPassword = this.tb_password.Text;
+           
+
+
+
+           
+                try
+                {
+                    MailMessage mail = new MailMessage();
+                    SmtpClient smto = new SmtpClient("smtp.gmail.com", 587);
+                    mail.From = new MailAddress("globala.kthare@gmail.com");
+                    mail.To.Add(tb_mail.Text);
+                    //newUserName = tb_mail.Text;
+                    mail.Subject = "Your password";
+                    mail.Body =  "Your verfication code is : " + getGeneratePassword(); ;
+                    smto.Credentials = new System.Net.NetworkCredential("globala.kthare@gmail.com", "kthare2021");
+                    smto.EnableSsl = true;
+                    smto.Send(mail);
+                    MessageBox.Show("Your verification code has sent to :\n" + this.tb_mail.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+          //  }
+
+            var form = new CodeVerification();
+            this.Hide();
+            form.Show();
+            /*
             Database db = new Database();
             string name = tb_name.Text;
             string mail = tb_mail.Text;
@@ -48,6 +92,7 @@ namespace KTHare
             var form = new Login();
             this.Hide();
             form.Show();
+            */
         }
 
         private void cb_showPassword_CheckedChanged(object sender, EventArgs e)
@@ -162,10 +207,22 @@ namespace KTHare
         {
             return Regex.IsMatch(userMail, @"^([\w\.\-]+)@((?i)[kth]+)((\.(\w)(?i)[se])+)$");
         }
-
-        private void Register_Load(object sender, EventArgs e)
+        /**
+         *Generate password
+         *@return a random password
+         */
+        public string getGeneratePassword()
         {
-          
+            Random rand = new Random();
+            string send_rand = "";
+            for (int i = 1; i <= 9; i++)
+            {
+                send_rand += rand.Next(0, 9).ToString();
+            }
+            GetVerfication = send_rand;
+            return send_rand;
         }
+       
+
     }
 }
