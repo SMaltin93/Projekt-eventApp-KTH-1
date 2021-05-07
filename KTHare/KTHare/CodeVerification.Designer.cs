@@ -36,10 +36,10 @@ namespace KTHare
             // 
             // btn_verify
             // 
-            this.btn_verify.Location = new System.Drawing.Point(109, 32);
-            this.btn_verify.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_verify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_verify.Location = new System.Drawing.Point(49, 19);
             this.btn_verify.Name = "btn_verify";
-            this.btn_verify.Size = new System.Drawing.Size(82, 22);
+            this.btn_verify.Size = new System.Drawing.Size(144, 64);
             this.btn_verify.TabIndex = 0;
             this.btn_verify.Text = "Verify";
             this.btn_verify.UseVisualStyleBackColor = true;
@@ -48,30 +48,30 @@ namespace KTHare
             // lbl_verify
             // 
             this.lbl_verify.AutoSize = true;
-            this.lbl_verify.Location = new System.Drawing.Point(106, 67);
+            this.lbl_verify.Location = new System.Drawing.Point(49, 166);
             this.lbl_verify.Name = "lbl_verify";
-            this.lbl_verify.Size = new System.Drawing.Size(101, 15);
+            this.lbl_verify.Size = new System.Drawing.Size(128, 20);
             this.lbl_verify.TabIndex = 1;
             this.lbl_verify.Text = "Verification code :";
             this.lbl_verify.Click += new System.EventHandler(this.lbl_verify_Click);
             // 
             // tb_verification
             // 
-            this.tb_verification.Location = new System.Drawing.Point(213, 64);
+            this.tb_verification.Location = new System.Drawing.Point(221, 154);
+            this.tb_verification.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_verification.Name = "tb_verification";
-            this.tb_verification.Size = new System.Drawing.Size(204, 23);
+            this.tb_verification.Size = new System.Drawing.Size(291, 34);
             this.tb_verification.TabIndex = 2;
             this.tb_verification.TextChanged += new System.EventHandler(this.tb_verification_TextChanged);
             // 
             // CodeVerification
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1256, 647);
+            this.ClientSize = new System.Drawing.Size(637, 292);
             this.Controls.Add(this.tb_verification);
             this.Controls.Add(this.lbl_verify);
             this.Controls.Add(this.btn_verify);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CodeVerification";
             this.Text = "CodeVerification";
             this.ResumeLayout(false);

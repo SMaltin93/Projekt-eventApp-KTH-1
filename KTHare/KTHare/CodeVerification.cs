@@ -13,9 +13,10 @@ namespace KTHare
     
     public partial class CodeVerification : Form
     {
-       
-        public CodeVerification()
+        public Register read;
+        public CodeVerification(Register read)
         {
+            this.read = read;
             InitializeComponent();
         }
 
@@ -31,16 +32,15 @@ namespace KTHare
 
         private void btn_verify_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Register.GetVerfication + "\n"  + Register.GetEmail + "\n" + Register.GetPassword + "\n" + Register.GetName);
+           // MessageBox.Show(Register.GetVerfication + "\n"  + Register.GetEmail + "\n" + Register.GetPassword + "\n" + Register.GetName);
             
-            if ( Register.GetVerfication == tb_verification.Text )
+            if ( read.GetVerfication == tb_verification.Text )
             {
 
-            
             Database db = new Database();
-            string name = Register.GetName; //tb_name.Text;
-            string mail = Register.GetEmail; ;//  password tb_mail.Text;
-            string password = Register.GetPassword; ; //tb_password.Text;
+            string name = read.GetName; //tb_name.Text;
+            string mail = read.GetEmail; ;//  password tb_mail.Text;
+            string password = read.GetPassword; ; //tb_password.Text;
 
             var sql = "INSERT INTO login_table(id, name, mail, password) VALUES(NULL, @name, @mail, @password)";
             using var cmd = new MySqlCommand(sql, db.con);
@@ -53,15 +53,19 @@ namespace KTHare
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("Konto " + name + " skapades!");
-
+            //  Register.GetVerfication = ""; Kanske behövs 
             var form = new Login();
             this.Hide();
             form.Show();
 
 
-            }else
+            }else if (string.IsNullOrEmpty(tb_verification.Text))
             {
-                MessageBox.Show("fel lösenord");
+                MessageBox.Show(" Enter your password! ");
+
+            } else
+            {
+                MessageBox.Show(" Incorrect password! \n Try agin! (: ");
             }
 
 

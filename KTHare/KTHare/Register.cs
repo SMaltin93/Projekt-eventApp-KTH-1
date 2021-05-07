@@ -15,10 +15,10 @@ namespace KTHare
    
     public partial class Register : Form
     {
-        public static string GetEmail;
-        public static string GetPassword;
-        public static string GetName;
-        public static string GetVerfication;
+        public string GetEmail;
+        public string GetPassword;
+        public string GetName;
+        public string GetVerfication;
 
 
         private bool correctInput;
@@ -68,7 +68,7 @@ namespace KTHare
 
           //  }
 
-            var form = new CodeVerification();
+            var form = new CodeVerification(this);
             this.Hide();
             form.Show();
             /*
@@ -112,8 +112,11 @@ namespace KTHare
         }
         private void tb_mail_TextChanged(object sender, EventArgs e)
         {
+
             string inputEmail;
             correctInput = false;
+
+
             while (correctInput != true)
             {
                 inputEmail = tb_mail.Text;
@@ -139,7 +142,7 @@ namespace KTHare
                 }
                 else if (string.IsNullOrEmpty(tb_mail.Text))
                 {
-                    errorProvider1.SetError(this.tb_mail, "Enter your KTH email");
+                    errorProvider1.SetError(this.tb_mail, "Enter your KTH-email");
                     break;
                 }
                 else
