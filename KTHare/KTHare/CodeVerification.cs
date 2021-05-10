@@ -40,9 +40,9 @@ namespace KTHare
             {
 
             Database db = new Database();
-            string name = read.GetName; //tb_name.Text;
-            string mail = read.GetEmail; ;//  password tb_mail.Text;
-            string password = read.GetPassword; ; //tb_password.Text;
+            string name = read.GetName;
+            string mail = read.GetEmail; 
+            string password = read.GetPassword; 
                 
 
             var sql = "INSERT INTO login_table(id, name, mail, password) VALUES(NULL, @name, @mail, @password)";
@@ -50,7 +50,7 @@ namespace KTHare
 
             cmd.Parameters.AddWithValue("@name", name);
             cmd.Parameters.AddWithValue("@mail", mail);
-            cmd.Parameters.AddWithValue("@password", password);
+            cmd.Parameters.AddWithValue("@password", password); // lägg till hashed password
             cmd.Prepare();
 
             cmd.ExecuteNonQuery();
