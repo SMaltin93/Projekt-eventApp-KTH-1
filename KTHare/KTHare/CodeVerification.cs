@@ -34,7 +34,6 @@ namespace KTHare
 
         private void btn_verify_Click(object sender, EventArgs e)
         {
-           // MessageBox.Show(Register.GetVerfication + "\n"  + Register.GetEmail + "\n" + Register.GetPassword + "\n" + Register.GetName);
             
             if ( read.GetVerfication == tb_verification.Text )
             {
@@ -45,18 +44,16 @@ namespace KTHare
             string password = read.GetPassword; 
                 
 
-            var sql = "INSERT INTO login_table(id, name, mail, password) VALUES(NULL, @name, @mail, @password)";
+            var sql = "INSERT INTO login_table(id, name, mail, password) VALUES(NULL, @name, @mail, AES_ENCRYPT('" + password + "', '" + KTHare.Properties.Settings.Default.HashPassword + "'))";
             using var cmd = new MySqlCommand(sql, db.con);
 
             cmd.Parameters.AddWithValue("@name", name);
             cmd.Parameters.AddWithValue("@mail", mail);
-            cmd.Parameters.AddWithValue("@password", password); // lägg till hashed password
             cmd.Prepare();
 
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("Konto " + name + " skapades!");
-            //  Register.GetVerfication = ""; Kanske behövs 
             var form = new Login();
             this.Hide();
             form.Show();

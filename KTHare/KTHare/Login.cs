@@ -26,7 +26,7 @@ namespace KTHare
             string mail = tb_mail.Text;
             string password = tb_password.Text;
 
-            var sql = "SELECT * FROM login_table WHERE mail='" + mail + "'";
+            var sql = "SELECT id,mail,name,AES_DECRYPT(password, '" + KTHare.Properties.Settings.Default.HashPassword + "') AS 'password' FROM login_table WHERE mail='" + mail + "'";
             using var cmd = new MySqlCommand(sql, db.con);
 
             using MySqlDataReader rdr = cmd.ExecuteReader();

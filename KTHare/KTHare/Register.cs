@@ -37,12 +37,10 @@ namespace KTHare
         }
 
         private void btn_register_Click(object sender, EventArgs e)
-        {
-           
+        {           
             GetEmail = this.tb_mail.Text;
             GetName = this.tb_name.Text;
-            GetPassword = this.tb_password.Text;
-            
+            GetPassword = this.tb_password.Text;   
            
                 try
                 {
@@ -66,7 +64,7 @@ namespace KTHare
 
             var form = new CodeVerification(this);
             GetHashedPassword = new Hashing(this).getHashed;
-            MessageBox.Show(GetHashedPassword);
+            //MessageBox.Show(GetHashedPassword);
             this.Hide();
             form.Show();
             

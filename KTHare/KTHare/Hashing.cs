@@ -17,7 +17,7 @@ namespace KTHare
             this.getHashed = Hash_String(getUserPassword.GetPassword);
         }
         
-       private string Hash_String (string userPassword)
+       private string Hash_String(string userPassword)
         {
             StringBuilder build = new StringBuilder();
             
