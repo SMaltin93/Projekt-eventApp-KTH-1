@@ -127,7 +127,7 @@ namespace KTHare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 90);
+            this.ClientSize = new System.Drawing.Size(366, 95);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cb_showPassword);
             this.Controls.Add(this.linklbl_createaccount);

@@ -61,16 +61,13 @@ namespace KTHare
                 {
                     MessageBox.Show("Du gick med i eventet!");
                 }
-
                 con.Close();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 con.Close();
             }
-
         }
     } 
 }
