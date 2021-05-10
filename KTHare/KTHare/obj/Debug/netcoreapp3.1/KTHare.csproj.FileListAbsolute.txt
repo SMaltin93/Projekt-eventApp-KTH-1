@@ -54,3 +54,5 @@ C:\Users\slema\source\repos\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.
 C:\Users\slema\source\repos\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.dll
 C:\Users\slema\source\repos\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.pdb
 C:\Users\slema\source\repos\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.genruntimeconfig.cache
+C:\Users\maxis\source\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.csprojAssemblyReference.cache
+C:\Users\maxis\source\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.CodeVerification.resources

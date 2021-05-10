@@ -45,12 +45,11 @@ namespace KTHare
             string password = read.GetPassword; ; //tb_password.Text;
                 
 
-            var sql = "INSERT INTO login_table(id, name, mail, password) VALUES(NULL, @name, @mail, @password)";
+            var sql = "INSERT INTO login_table(id, name, mail, password) VALUES(NULL, @name, @mail, AES_ENCRYPT('" + password + "', '" + KTHare.Properties.Settings.Default.HashPassword + "'))";
             using var cmd = new MySqlCommand(sql, db.con);
 
             cmd.Parameters.AddWithValue("@name", name);
             cmd.Parameters.AddWithValue("@mail", mail);
-            cmd.Parameters.AddWithValue("@password", password);
             cmd.Prepare();
 
             cmd.ExecuteNonQuery();
