@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Security.Cryptography;
+
 
 
 namespace KTHare
@@ -41,6 +43,7 @@ namespace KTHare
             string name = read.GetName; //tb_name.Text;
             string mail = read.GetEmail; ;//  password tb_mail.Text;
             string password = read.GetPassword; ; //tb_password.Text;
+                
 
             var sql = "INSERT INTO login_table(id, name, mail, password) VALUES(NULL, @name, @mail, @password)";
             using var cmd = new MySqlCommand(sql, db.con);

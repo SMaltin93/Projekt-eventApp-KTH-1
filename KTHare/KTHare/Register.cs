@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
 using System.Net.Mail;
-
 namespace KTHare
 {
 
@@ -19,6 +18,8 @@ namespace KTHare
         public string GetPassword;
         public string GetName;
         public string GetVerfication;
+        public string GetHashedPassword;
+        
 
 
         private bool correctInput;
@@ -37,15 +38,11 @@ namespace KTHare
 
         private void btn_register_Click(object sender, EventArgs e)
         {
-            //if (emailControl(tb_mail.Text) == true && !(String.IsNullOrEmpty(tb_mail.Text)))
-            // {
+           
             GetEmail = this.tb_mail.Text;
             GetName = this.tb_name.Text;
             GetPassword = this.tb_password.Text;
-           
-
-
-
+            
            
                 try
                 {
@@ -53,7 +50,6 @@ namespace KTHare
                     SmtpClient smto = new SmtpClient("smtp.gmail.com", 587);
                     mail.From = new MailAddress("globala.kthare@gmail.com");
                     mail.To.Add(tb_mail.Text);
-                    //newUserName = tb_mail.Text;
                     mail.Subject = "Your password";
                     mail.Body =  "Your verfication code is : " + getGeneratePassword(); ;
                     smto.Credentials = new System.Net.NetworkCredential("globala.kthare@gmail.com", "kthare2021");
@@ -69,30 +65,11 @@ namespace KTHare
           //  }
 
             var form = new CodeVerification(this);
+            GetHashedPassword = new Hashing(this).getHashed;
+            MessageBox.Show(GetHashedPassword);
             this.Hide();
             form.Show();
-            /*
-            Database db = new Database();
-            string name = tb_name.Text;
-            string mail = tb_mail.Text;
-            string password = tb_password.Text;
-
-            var sql = "INSERT INTO login_table(id, name, mail, password) VALUES(NULL, @name, @mail, @password)";
-            using var cmd = new MySqlCommand(sql, db.con);
-
-            cmd.Parameters.AddWithValue("@name", name);
-            cmd.Parameters.AddWithValue("@mail", mail);
-            cmd.Parameters.AddWithValue("@password", password);
-            cmd.Prepare();
-
-            cmd.ExecuteNonQuery();
-
-            MessageBox.Show("Konto " + name + " skapades!");
-
-            var form = new Login();
-            this.Hide();
-            form.Show();
-            */
+            
         }
 
         private void cb_showPassword_CheckedChanged(object sender, EventArgs e)
@@ -225,7 +202,9 @@ namespace KTHare
             GetVerfication = send_rand;
             return send_rand;
         }
+      
        
-
     }
+
+
 }
