@@ -132,46 +132,57 @@ namespace KTHare
         private void tb_name_TextChanged(object sender, EventArgs e)
         {
 
-            while (correctInput == true)
+            while (true)
             {
 
-                if ((string.IsNullOrEmpty(tb_name.Text) || string.IsNullOrEmpty(tb_password.Text)))
+                if (nameOrPassControl(tb_name.Text) == true && correctInput == true && controlLength(tb_name.Text, tb_password.Text))
                 {
-                    btn_register.Enabled = false;
+                    errorProvider1.Clear();
+                    btn_register.Enabled = controlLength(tb_name.Text, tb_password.Text);
+                    break;
+                }
+                else if (nameOrPassControl(tb_name.Text) != true)
+                {
+                    errorProvider1.SetError(this.tb_name, "Failed input! Numbers and letters allowed");
                     break;
                 }
                 else
                 {
-                    btn_register.Enabled = true;
+                    errorProvider1.Clear();
+                    btn_register.Enabled = false;
                     break;
                 }
 
             }
-
         }
 
         private void tb_password_TextChanged(object sender, EventArgs e)
+
         {
-            while (correctInput == true)
+
+            while (true)
             {
 
-                if (string.IsNullOrEmpty(tb_password.Text) || string.IsNullOrEmpty(tb_name.Text))
+                if (nameOrPassControl(tb_password.Text) == true && correctInput == true && controlLength(tb_name.Text, tb_password.Text))
                 {
+                    errorProvider1.Clear();
+                    btn_register.Enabled = controlLength(tb_name.Text, tb_password.Text);
+                    break;
+
+                }else if (nameOrPassControl(tb_password.Text) != true)
+                {
+                    errorProvider1.SetError(this.tb_password, "Failed input! Numbers and letters just allowed");
+                    break;
+                }
+                else 
+                {
+                    errorProvider1.Clear();
                     btn_register.Enabled = false;
                     break;
                 }
-                else
-                {
-                    btn_register.Enabled = true;
-                    break;
-                }
 
             }
-            while (correctInput != true && string.IsNullOrEmpty(tb_name.Text))
-            {
-                btn_register.Enabled = false;
-                break;
-            }
+           
         }
         /*
          * ################ Help functions ###########
@@ -182,8 +193,15 @@ namespace KTHare
          *@return true if the user has a kth-email, false otherwise 
          */
         public bool emailControl(String userMail)
+
         {
             return Regex.IsMatch(userMail, @"^([\w\.\-]+)@((?i)[kth]+)((\.(\w)(?i)[se])+)$");
+          
+        }
+
+        public bool nameOrPassControl (String input)
+        {
+            return Regex.IsMatch(input, @"^([a-zA-Z0-9]+)$");    
         }
         /**
          *Generate password
@@ -200,9 +218,18 @@ namespace KTHare
             GetVerfication = send_rand;
             return send_rand;
         }
-      
-       
-    }
 
+        public bool controlLength(string userName, string password)
+        {
+            if (string.IsNullOrEmpty(password) || userName.Length < 3 || password.Length < 3 || string.IsNullOrEmpty(userName) || userName.Length >= 20 || password.Length >= 20)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        
+    }
 
 }

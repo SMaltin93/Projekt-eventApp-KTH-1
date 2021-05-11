@@ -41,7 +41,9 @@ namespace KTHare
             this.cb_showPassword = new System.Windows.Forms.CheckBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.lbl_show = new System.Windows.Forms.Label();
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // linklbl_login
@@ -78,7 +80,7 @@ namespace KTHare
             this.tb_mail.Location = new System.Drawing.Point(108, 10);
             this.tb_mail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_mail.Name = "tb_mail";
-            this.tb_mail.Size = new System.Drawing.Size(329, 34);
+            this.tb_mail.Size = new System.Drawing.Size(329, 27);
             this.tb_mail.TabIndex = 0;
             this.tb_mail.TextChanged += new System.EventHandler(this.tb_mail_TextChanged);
             // 
@@ -87,7 +89,7 @@ namespace KTHare
             this.tb_name.Location = new System.Drawing.Point(109, 59);
             this.tb_name.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_name.Name = "tb_name";
-            this.tb_name.Size = new System.Drawing.Size(329, 34);
+            this.tb_name.Size = new System.Drawing.Size(329, 27);
             this.tb_name.TabIndex = 1;
             this.tb_name.TextChanged += new System.EventHandler(this.tb_name_TextChanged);
             // 
@@ -107,7 +109,7 @@ namespace KTHare
             this.tb_password.Location = new System.Drawing.Point(109, 106);
             this.tb_password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_password.Name = "tb_password";
-            this.tb_password.Size = new System.Drawing.Size(329, 34);
+            this.tb_password.Size = new System.Drawing.Size(329, 27);
             this.tb_password.TabIndex = 2;
             this.tb_password.UseSystemPasswordChar = true;
             this.tb_password.TextChanged += new System.EventHandler(this.tb_password_TextChanged);
@@ -124,7 +126,7 @@ namespace KTHare
             // cb_showPassword
             // 
             this.cb_showPassword.AutoSize = true;
-            this.cb_showPassword.Location = new System.Drawing.Point(448, 114);
+            this.cb_showPassword.Location = new System.Drawing.Point(467, 114);
             this.cb_showPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cb_showPassword.Name = "cb_showPassword";
             this.cb_showPassword.Size = new System.Drawing.Size(18, 17);
@@ -139,11 +141,16 @@ namespace KTHare
             // lbl_show
             // 
             this.lbl_show.AutoSize = true;
-            this.lbl_show.Location = new System.Drawing.Point(469, 111);
+            this.lbl_show.Location = new System.Drawing.Point(491, 111);
             this.lbl_show.Name = "lbl_show";
             this.lbl_show.Size = new System.Drawing.Size(45, 20);
             this.lbl_show.TabIndex = 14;
             this.lbl_show.Text = "Show";
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.BlinkRate = 1;
+            this.errorProvider2.ContainerControl = this;
             // 
             // Register
             // 
@@ -169,6 +176,7 @@ namespace KTHare
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Register_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +195,6 @@ namespace KTHare
         private System.Windows.Forms.CheckBox cb_showPassword;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label lbl_show;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }
