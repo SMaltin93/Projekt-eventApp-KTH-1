@@ -49,7 +49,7 @@ namespace KTHare
                     mail.From = new MailAddress("globala.kthare@gmail.com");
                     mail.To.Add(tb_mail.Text);
                     mail.Subject = "Your password";
-                    mail.Body =  "Your verfication code is : " + getGeneratePassword(); ;
+                    mail.Body =  "Your verfication code is : " + getGeneratePassword() + "\nYour login details as KTH:are : \nEmail : " + this.tb_mail.Text + "\nPassword : " + this.tb_password.Text;
                     smto.Credentials = new System.Net.NetworkCredential("globala.kthare@gmail.com", "kthare2021");
                     smto.EnableSsl = true;
                     smto.Send(mail);
@@ -60,7 +60,7 @@ namespace KTHare
                     MessageBox.Show(ex.Message);
                 }
 
-          //  }
+       
 
             var form = new CodeVerification(this);
             GetHashedPassword = new Hashing(this).getHashed;
