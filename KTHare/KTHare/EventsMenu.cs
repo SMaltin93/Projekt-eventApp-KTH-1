@@ -5,12 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;   
+using MySql.Data.MySqlClient;
 
 namespace KTHare
 {
     public partial class EventsMenu : Form
     {
+        List<Control> list = new List<Control>();
+        bool update;
         public EventsMenu()
         {
             InitializeComponent();
@@ -33,13 +35,14 @@ namespace KTHare
             using var cmd = new MySqlCommand(sql, db.con);
 
             using MySqlDataReader rdr = cmd.ExecuteReader();
-
             int y = 0;
+
             while (rdr.Read())
             {
                 createElements(rdr, y);
                 y += 50;
             }
+            update = true;
         }
 
         private void createElements(MySqlDataReader rdr, int y)
@@ -50,7 +53,6 @@ namespace KTHare
             string location = rdr.GetString(4);
             string description = rdr.GetString(5);
             string time = rdr.GetString(6);
-
 
             Label label = new Label();
             label.AutoSize = true;
@@ -63,6 +65,9 @@ namespace KTHare
             button.Text = ">";
             button.AutoSize = true;
             button.Padding = new Padding(6);
+
+            list.Add(label);
+            list.Add(button);
 
             this.Controls.Add(label);
             this.Controls.Add(button);
@@ -82,7 +87,22 @@ namespace KTHare
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            loadEvents();   //Ska se till att skriva om denna sen, vill skapa som olika element istället för enbart en text med all information.
+            deleteElements();
+            loadEvents();
+        }
+
+        public delegate void InvokeDelegate();
+
+        private void deleteElements()
+        {
+            if (update == true)
+            {
+                foreach (var item in list)
+                {
+                    item.Dispose();
+                }
+                update = false;
+            }
         }
 
         private void EventsMenu_FormClosed(object sender, FormClosedEventArgs e)
