@@ -60,6 +60,7 @@ namespace KTHare
                 if (adapter.UpdateCommand.ExecuteNonQuery() > 0)
                 {
                     MessageBox.Show("Du gick med i eventet!");
+                    this.Hide();
                 }
                 con.Close();
             }

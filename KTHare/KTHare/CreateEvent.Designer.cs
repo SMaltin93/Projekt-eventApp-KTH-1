@@ -45,8 +45,8 @@ namespace KTHare
             this.btn_createEvent.Location = new System.Drawing.Point(219, 370);
             this.btn_createEvent.Name = "btn_createEvent";
             this.btn_createEvent.Size = new System.Drawing.Size(75, 23);
-            this.btn_createEvent.TabIndex = 0;
-            this.btn_createEvent.Text = "Create";
+            this.btn_createEvent.TabIndex = 5;
+            this.btn_createEvent.Text = "Skapa";
             this.btn_createEvent.UseVisualStyleBackColor = true;
             this.btn_createEvent.Click += new System.EventHandler(this.btn_createEvent_Click);
             // 
@@ -72,7 +72,7 @@ namespace KTHare
             this.tb_description.Multiline = true;
             this.tb_description.Name = "tb_description";
             this.tb_description.Size = new System.Drawing.Size(282, 238);
-            this.tb_description.TabIndex = 3;
+            this.tb_description.TabIndex = 4;
             // 
             // label1
             // 
@@ -88,7 +88,7 @@ namespace KTHare
             this.tb_location.Location = new System.Drawing.Point(109, 41);
             this.tb_location.Name = "tb_location";
             this.tb_location.Size = new System.Drawing.Size(185, 23);
-            this.tb_location.TabIndex = 4;
+            this.tb_location.TabIndex = 2;
             // 
             // label2
             // 
@@ -114,7 +114,7 @@ namespace KTHare
             this.cb_time.Location = new System.Drawing.Point(204, 70);
             this.cb_time.Name = "cb_time";
             this.cb_time.Size = new System.Drawing.Size(90, 23);
-            this.cb_time.TabIndex = 9;
+            this.cb_time.TabIndex = 3;
             // 
             // CreateEvent
             // 

@@ -24,7 +24,7 @@ namespace KTHare
             string description = tb_description.Text;
             string time = cb_time.Text;
 
-            if (name != "" && location != "" && description != "")
+            if (name != "" && location != "" && description != "" && time != "")
             {
                 var sql = "INSERT INTO event_table(id, name, participantNames, location, description, time) VALUES(NULL, @name, @participantNames, @location, @description, @time)";
                 using var cmd = new MySqlCommand(sql, db.con);
