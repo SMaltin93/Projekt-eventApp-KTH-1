@@ -4,6 +4,9 @@ using System.Text;
 
 namespace KTHare
 {
+    /**
+    * Sparar informationen om användaren
+    */
     static class User
     {
         public static int id;

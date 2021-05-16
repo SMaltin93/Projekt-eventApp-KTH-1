@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace KTHare
 {
+    /**
+    * Kontrollerar ifall databasen är på eller inte.
+    */
     class Database
     {
         public string cs = @KTHare.Properties.Settings.Default.ConnectionString;
@@ -20,7 +23,7 @@ namespace KTHare
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Connection Error!\n" + ex.Message);
+                MessageBox.Show("Anslutningsfel!\n" + ex.Message);
             }
         }
     }
