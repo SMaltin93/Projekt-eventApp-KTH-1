@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -12,10 +13,24 @@ namespace KTHare
     public partial class EventsMenu : Form
     {
         List<Control> list = new List<Control>();
-        bool update;
+        List<string> oldValues = new List<string>();
         public EventsMenu()
         {
             InitializeComponent();
+
+            Database db = new Database();
+
+            var sql = "SELECT * FROM event_table";
+            using var cmd = new MySqlCommand(sql, db.con);
+
+            using MySqlDataReader rdr = cmd.ExecuteReader();
+
+            object[] obj = new object[rdr.FieldCount];
+
+            while (rdr.Read())
+            {
+                oldValues.Add(rdr.GetValues(obj).ToString());
+            }
         }
 
         private void EventsMenu_Load(object sender, EventArgs e)
@@ -42,7 +57,6 @@ namespace KTHare
                 createElements(rdr, y);
                 y += 60; //Avstånd mellan eventen på skärmen i pixlar.
             }
-            update = true;
         }
 
         private void createElements(MySqlDataReader rdr, int y)
@@ -72,7 +86,7 @@ namespace KTHare
             Label label = new Label();
             label.AutoSize = true;
             label.ForeColor = color;
-            label.Text = "\n" + name + " - " + participantNames + " (" + participants + ") - " + time;
+            label.Text = "\n" + name + " (" + location + ") - " + participantNames + " (" + participants + ") - " + time;
             label.Location = new Point(30, y);
 
             PictureBox pictureBox = new PictureBox();
@@ -206,22 +220,42 @@ namespace KTHare
         }
         private void timer_Tick(object sender, EventArgs e)
         {
-            deleteElements();
-            loadEvents();
+            if (detectChange())
+            {
+                deleteElements();
+                loadEvents();
+            }
         }
+        private bool detectChange()
+        {
+            Database db = new Database();
 
-        public delegate void InvokeDelegate();
+            var sql = "SELECT * FROM event_table";
+            using var cmd = new MySqlCommand(sql, db.con);
 
+            using MySqlDataReader rdr = cmd.ExecuteReader();
+
+            List<string> temp = new List<string>();
+            object[] obj = new object[rdr.FieldCount];
+
+            while (rdr.Read())
+            {
+                temp.Add(rdr.GetString(2).ToString());
+            }
+
+            if (temp.SequenceEqual(oldValues))
+            {
+                return false;
+            }
+            oldValues = temp.GetRange(0, temp.Count);
+            return true;
+        }
         private void deleteElements()
         {
-            if (update == true)
+            foreach (var item in list)
             {
-                foreach (var item in list)
-                {
-                    item.Dispose();
-                }
-                update = false;
-            }
+                item.Dispose();
+            }       
         }
 
         private void EventsMenu_FormClosed(object sender, FormClosedEventArgs e)
