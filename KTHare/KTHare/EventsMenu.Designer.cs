@@ -64,7 +64,7 @@ namespace KTHare
             this.MinimizeBox = false;
             this.Name = "EventsMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EventsMenu";
+            this.Text = "KTH:are - Event";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EventsMenu_FormClosed);
             this.Load += new System.EventHandler(this.EventsMenu_Load);
             this.ResumeLayout(false);
