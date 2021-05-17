@@ -7,12 +7,18 @@ using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
-
+using System.Net.Mail;
 namespace KTHare
 {
     public partial class Register : Form
     {
+        public string GetEmail;
+        public string GetPassword;
+        public string GetName;
+        public string GetVerfication;
+        public string GetHashedPassword;     
         private bool correctInput;
+
         public Register()
         {
             InitializeComponent();
@@ -25,29 +31,50 @@ namespace KTHare
             this.Hide();
             form.Show();
         }
-
         private void btn_register_Click(object sender, EventArgs e)
-        {
-            Database db = new Database();
-            string name = tb_name.Text;
-            string mail = tb_mail.Text;
-            string password = tb_password.Text;
+        {           
+            GetEmail = this.tb_mail.Text;
+            GetName = this.tb_name.Text;
+            GetPassword = this.tb_password.Text;
 
-            var sql = "INSERT INTO login_table(id, name, mail, password) VALUES(NULL, @name, @mail, @password)";
+            Database db = new Database();
+
+            string mail = tb_mail.Text;
+
+            var sql = "SELECT mail FROM login_table WHERE mail='" + mail + "'";
             using var cmd = new MySqlCommand(sql, db.con);
 
-            cmd.Parameters.AddWithValue("@name", name);
-            cmd.Parameters.AddWithValue("@mail", mail);
-            cmd.Parameters.AddWithValue("@password", password);
-            cmd.Prepare();
+            using MySqlDataReader rdr = cmd.ExecuteReader();
 
-            cmd.ExecuteNonQuery();
+            if (!rdr.Read())
+            {
+                try
+                {
+                    MailMessage mailM = new MailMessage();
+                    SmtpClient smto = new SmtpClient("smtp.gmail.com", 587);
+                    mailM.From = new MailAddress("globala.kthare@gmail.com");
+                    mailM.To.Add(tb_mail.Text);
+                    mailM.Subject = "Verifieringskod - KTH:are";
+                    mailM.Body = "Din verifieringskod: " + getGeneratePassword() + "\nDin inloggningsinformation: \nEmail: " + this.tb_mail.Text + "\nLösenord: " + this.tb_password.Text;
+                    smto.Credentials = new System.Net.NetworkCredential("globala.kthare@gmail.com", "kthare2021");
+                    smto.EnableSsl = true;
+                    smto.Send(mailM);
+                    MessageBox.Show("Din verifieringskod har skickats till:\n" + this.tb_mail.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
 
-            MessageBox.Show("Konto " + name + " skapades!");
-
-            var form = new Login();
-            this.Hide();
-            form.Show();
+                var form = new CodeVerification(this);
+                GetHashedPassword = new Hashing(this).getHashed;
+                this.Hide();
+                form.Show();
+            }
+            else
+            {
+                MessageBox.Show("Kontot finns redan!");
+            }               
         }
         private void cb_showPassword_CheckedChanged(object sender, EventArgs e)
         {
@@ -68,6 +95,7 @@ namespace KTHare
         {
             string inputEmail;
             correctInput = false;
+
             while (correctInput != true)
             {
                 inputEmail = tb_mail.Text;
@@ -89,53 +117,64 @@ namespace KTHare
                 }
                 else if (string.IsNullOrEmpty(tb_mail.Text))
                 {
-                    errorProvider1.SetError(this.tb_mail, "Enter your KTH email");
+                    errorProvider1.SetError(this.tb_mail, "Skriv in din KTH-emailadress.");
                     break;
                 }
                 else
                 {
-                    errorProvider1.SetError(this.tb_mail, "You are not KTH:are, please try again");
+                    errorProvider1.SetError(this.tb_mail, "Ingen KTH-emailadress, försök igen!");
                     break;
                 }
             }
         }
         private void tb_name_TextChanged(object sender, EventArgs e)
         {
-            while (correctInput == true)
+            while (true)
             {
-                if ((string.IsNullOrEmpty(tb_name.Text) || string.IsNullOrEmpty(tb_password.Text)))
+
+                if (nameOrPassControl(tb_name.Text) == true && correctInput == true && controlLength(tb_name.Text, tb_password.Text))
                 {
-                    btn_register.Enabled = false;
+                    errorProvider1.Clear();
+                    btn_register.Enabled = controlLength(tb_name.Text, tb_password.Text);
+                    break;
+                }
+                else if (nameOrPassControl(tb_name.Text) != true)
+                {
+                    errorProvider1.SetError(this.tb_name, "Fel indata! Nummer och bokstäver är tillåtet.");
                     break;
                 }
                 else
                 {
-                    btn_register.Enabled = true;
+                    errorProvider1.Clear();
+                    btn_register.Enabled = false;
                     break;
                 }
             }
         }
-
         private void tb_password_TextChanged(object sender, EventArgs e)
         {
-            while (correctInput == true)
+            while (true)
             {
-                if (string.IsNullOrEmpty(tb_password.Text) || string.IsNullOrEmpty(tb_name.Text))
+
+                if (nameOrPassControl(tb_password.Text) == true && correctInput == true && controlLength(tb_name.Text, tb_password.Text))
                 {
+                    errorProvider1.Clear();
+                    btn_register.Enabled = controlLength(tb_name.Text, tb_password.Text);
+                    break;
+
+                }else if (nameOrPassControl(tb_password.Text) != true)
+                {
+                    errorProvider1.SetError(this.tb_password, "Failed input! Numbers and letters just allowed");
+                    break;
+                }
+                else 
+                {
+                    errorProvider1.Clear();
                     btn_register.Enabled = false;
                     break;
                 }
-                else
-                {
-                    btn_register.Enabled = true;
-                    break;
-                }
             }
-            while (correctInput != true && string.IsNullOrEmpty(tb_name.Text))
-            {
-                btn_register.Enabled = false;
-                break;
-            }
+           
         }
         /*
          * ################ Help functions ###########
@@ -144,8 +183,39 @@ namespace KTHare
          *@return true if the user has a kth-email, false otherwise 
          */
         public bool emailControl(String userMail)
+
         {
             return Regex.IsMatch(userMail, @"^([\w\.\-]+)@((?i)[kth]+)((\.(\w)(?i)[se])+)$");
+          
         }
+
+        public bool nameOrPassControl (String input)
+        {
+            return Regex.IsMatch(input, @"^([a-zA-Z0-9]+)$");    
+        }
+        /**
+         *Generate password
+         *@return a random password
+         */
+        public string getGeneratePassword()
+        {
+            Random rand = new Random();
+            string send_rand = "";
+            for (int i = 1; i <= 9; i++)
+            {
+                send_rand += rand.Next(0, 9).ToString();
+            }
+            GetVerfication = send_rand;
+            return send_rand;
+        }
+
+        public bool controlLength(string userName, string password)
+        {
+            if (string.IsNullOrEmpty(password) || userName.Length < 3 || password.Length < 3 || string.IsNullOrEmpty(userName) || userName.Length >= 20 || password.Length >= 20)
+            {
+                return false;
+            }
+            return true;
+        }      
     }
 }

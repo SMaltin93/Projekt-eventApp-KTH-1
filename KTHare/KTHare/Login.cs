@@ -25,7 +25,7 @@ namespace KTHare
             string mail = tb_mail.Text;
             string password = tb_password.Text;
 
-            var sql = "SELECT * FROM login_table WHERE mail='" + mail + "'";
+            var sql = "SELECT id,mail,name,AES_DECRYPT(password, '" + KTHare.Properties.Settings.Default.HashPassword + "') AS 'password' FROM login_table WHERE mail='" + mail + "'";
             using var cmd = new MySqlCommand(sql, db.con);
 
             using MySqlDataReader rdr = cmd.ExecuteReader();
@@ -73,7 +73,7 @@ namespace KTHare
 
         private void Login_Load(object sender, EventArgs e)
         {
-            Database db = new Database(); //Checks if the database is online - hosted on Max-Desktop pc
+            Database db = new Database(); //Kollar ifall databasen är på.
         }
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
