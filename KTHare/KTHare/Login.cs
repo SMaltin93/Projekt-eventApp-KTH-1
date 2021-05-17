@@ -74,7 +74,7 @@ namespace KTHare
 
         private void Login_Load(object sender, EventArgs e)
         {
-            Database db = new Database(); //Checks if the database is online - hosted on Max-Desktop pc
+            Database db = new Database(); //Kollar ifall databasen är på.
         }
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
@@ -95,9 +95,6 @@ namespace KTHare
                  break;
             }
 
-        }
-        private void tb_password_TextChanged(object sender, EventArgs e)
-        {
         }
     }
 }
