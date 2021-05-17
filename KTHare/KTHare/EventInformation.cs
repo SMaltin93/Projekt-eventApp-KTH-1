@@ -14,16 +14,18 @@ namespace KTHare
         string name;
         string description;
         string participantNames;
-        string participants;
+        int participants;
         string location;
+        string time;
 
-        public EventInformation(string name, string description, string participantNames, string participants, string location)
+        public EventInformation(string name, string description, string participantNames, int participants, string location, string time)
         {
             this.name = name;
             this.description = description;
             this.participantNames = participantNames;
             this.participants = participants;
             this.location = location;
+            this.time = time;
 
             InitializeComponent();
         }
@@ -32,8 +34,41 @@ namespace KTHare
         {
             tb_name.Text = name;
             tb_location.Text = location;
-            lbl_participants.Text = participants;
+            lbl_participants.Text = participants.ToString();
             rtb_description.Text = description;
+            tb_time.Text = time;
         }
-    }
+
+        private void btn_joinEvent_Click(object sender, EventArgs e)
+        {        
+            string cs = @KTHare.Properties.Settings.Default.ConnectionString;
+            MySqlConnection con = new MySqlConnection(cs);
+
+            participantNames += ", " + User.name;
+            participants++;
+
+            string sql = "UPDATE event_table SET participantNames='"+ participantNames + "',participants='" + participants + "' WHERE name='" + name + "'";
+            var cmd = new MySqlCommand(sql, con);
+            try
+            {
+                con.Open();
+                var adapter = new MySqlDataAdapter(cmd);
+
+                adapter.UpdateCommand = con.CreateCommand();
+                adapter.UpdateCommand.CommandText = sql;
+
+                if (adapter.UpdateCommand.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("Du gick med i eventet!");
+                    this.Hide();
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                con.Close();
+            }
+        }
+    } 
 }

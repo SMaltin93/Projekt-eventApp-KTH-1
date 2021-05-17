@@ -37,13 +37,16 @@ namespace KTHare
             this.label1 = new System.Windows.Forms.Label();
             this.rtb_description = new System.Windows.Forms.RichTextBox();
             this.lbl_description = new System.Windows.Forms.Label();
+            this.lbl_time = new System.Windows.Forms.Label();
+            this.tb_time = new System.Windows.Forms.TextBox();
+            this.btn_joinEvent = new System.Windows.Forms.Button();
             lbl_participantsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_participantsLabel
             // 
             lbl_participantsLabel.AutoSize = true;
-            lbl_participantsLabel.Location = new System.Drawing.Point(182, 86);
+            lbl_participantsLabel.Location = new System.Drawing.Point(182, 114);
             lbl_participantsLabel.Name = "lbl_participantsLabel";
             lbl_participantsLabel.Size = new System.Drawing.Size(90, 15);
             lbl_participantsLabel.TabIndex = 8;
@@ -52,7 +55,7 @@ namespace KTHare
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
-            this.lbl_name.Location = new System.Drawing.Point(12, 14);
+            this.lbl_name.Location = new System.Drawing.Point(12, 15);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(91, 15);
             this.lbl_name.TabIndex = 0;
@@ -61,7 +64,7 @@ namespace KTHare
             // lbl_participants
             // 
             this.lbl_participants.AutoSize = true;
-            this.lbl_participants.Location = new System.Drawing.Point(275, 86);
+            this.lbl_participants.Location = new System.Drawing.Point(275, 114);
             this.lbl_participants.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_participants.Name = "lbl_participants";
             this.lbl_participants.Size = new System.Drawing.Size(19, 15);
@@ -72,7 +75,7 @@ namespace KTHare
             // 
             this.tb_name.Enabled = false;
             this.tb_name.HideSelection = false;
-            this.tb_name.Location = new System.Drawing.Point(109, 11);
+            this.tb_name.Location = new System.Drawing.Point(109, 12);
             this.tb_name.Name = "tb_name";
             this.tb_name.ReadOnly = true;
             this.tb_name.Size = new System.Drawing.Size(185, 23);
@@ -83,7 +86,7 @@ namespace KTHare
             // tb_location
             // 
             this.tb_location.Enabled = false;
-            this.tb_location.Location = new System.Drawing.Point(109, 40);
+            this.tb_location.Location = new System.Drawing.Point(109, 41);
             this.tb_location.Name = "tb_location";
             this.tb_location.ReadOnly = true;
             this.tb_location.Size = new System.Drawing.Size(185, 23);
@@ -92,7 +95,7 @@ namespace KTHare
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 43);
+            this.label1.Location = new System.Drawing.Point(68, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 15);
             this.label1.TabIndex = 3;
@@ -101,21 +104,50 @@ namespace KTHare
             // rtb_description
             // 
             this.rtb_description.Enabled = false;
-            this.rtb_description.Location = new System.Drawing.Point(12, 104);
+            this.rtb_description.Location = new System.Drawing.Point(12, 132);
             this.rtb_description.Name = "rtb_description";
             this.rtb_description.ReadOnly = true;
-            this.rtb_description.Size = new System.Drawing.Size(282, 282);
+            this.rtb_description.Size = new System.Drawing.Size(282, 232);
             this.rtb_description.TabIndex = 5;
             this.rtb_description.Text = "";
             // 
             // lbl_description
             // 
             this.lbl_description.AutoSize = true;
-            this.lbl_description.Location = new System.Drawing.Point(12, 86);
+            this.lbl_description.Location = new System.Drawing.Point(12, 114);
             this.lbl_description.Name = "lbl_description";
             this.lbl_description.Size = new System.Drawing.Size(71, 15);
             this.lbl_description.TabIndex = 7;
             this.lbl_description.Text = "Beskrivning:";
+            // 
+            // lbl_time
+            // 
+            this.lbl_time.AutoSize = true;
+            this.lbl_time.Location = new System.Drawing.Point(172, 73);
+            this.lbl_time.Name = "lbl_time";
+            this.lbl_time.Size = new System.Drawing.Size(26, 15);
+            this.lbl_time.TabIndex = 9;
+            this.lbl_time.Text = "Tid:";
+            // 
+            // tb_time
+            // 
+            this.tb_time.Enabled = false;
+            this.tb_time.Location = new System.Drawing.Point(204, 70);
+            this.tb_time.Name = "tb_time";
+            this.tb_time.ReadOnly = true;
+            this.tb_time.Size = new System.Drawing.Size(90, 23);
+            this.tb_time.TabIndex = 10;
+            this.tb_time.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btn_joinEvent
+            // 
+            this.btn_joinEvent.Location = new System.Drawing.Point(219, 370);
+            this.btn_joinEvent.Name = "btn_joinEvent";
+            this.btn_joinEvent.Size = new System.Drawing.Size(75, 23);
+            this.btn_joinEvent.TabIndex = 11;
+            this.btn_joinEvent.Text = "Gå med";
+            this.btn_joinEvent.UseVisualStyleBackColor = true;
+            this.btn_joinEvent.Click += new System.EventHandler(this.btn_joinEvent_Click);
             // 
             // EventInformation
             // 
@@ -123,6 +155,9 @@ namespace KTHare
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(306, 398);
+            this.Controls.Add(this.btn_joinEvent);
+            this.Controls.Add(this.tb_time);
+            this.Controls.Add(this.lbl_time);
             this.Controls.Add(lbl_participantsLabel);
             this.Controls.Add(this.lbl_description);
             this.Controls.Add(this.rtb_description);
@@ -153,5 +188,8 @@ namespace KTHare
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox rtb_description;
         private System.Windows.Forms.Label lbl_description;
+        private System.Windows.Forms.Label lbl_time;
+        private System.Windows.Forms.TextBox tb_time;
+        private System.Windows.Forms.Button btn_joinEvent;
     }
 }

@@ -36,6 +36,8 @@ namespace KTHare
             this.label1 = new System.Windows.Forms.Label();
             this.tb_location = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.lbl_time = new System.Windows.Forms.Label();
+            this.cb_time = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btn_createEvent
@@ -43,8 +45,8 @@ namespace KTHare
             this.btn_createEvent.Location = new System.Drawing.Point(219, 370);
             this.btn_createEvent.Name = "btn_createEvent";
             this.btn_createEvent.Size = new System.Drawing.Size(75, 23);
-            this.btn_createEvent.TabIndex = 0;
-            this.btn_createEvent.Text = "Create";
+            this.btn_createEvent.TabIndex = 5;
+            this.btn_createEvent.Text = "Skapa";
             this.btn_createEvent.UseVisualStyleBackColor = true;
             this.btn_createEvent.Click += new System.EventHandler(this.btn_createEvent_Click);
             // 
@@ -66,11 +68,11 @@ namespace KTHare
             // 
             // tb_description
             // 
-            this.tb_description.Location = new System.Drawing.Point(12, 91);
+            this.tb_description.Location = new System.Drawing.Point(12, 132);
             this.tb_description.Multiline = true;
             this.tb_description.Name = "tb_description";
-            this.tb_description.Size = new System.Drawing.Size(282, 273);
-            this.tb_description.TabIndex = 3;
+            this.tb_description.Size = new System.Drawing.Size(282, 238);
+            this.tb_description.TabIndex = 4;
             // 
             // label1
             // 
@@ -86,22 +88,41 @@ namespace KTHare
             this.tb_location.Location = new System.Drawing.Point(109, 41);
             this.tb_location.Name = "tb_location";
             this.tb_location.Size = new System.Drawing.Size(185, 23);
-            this.tb_location.TabIndex = 4;
+            this.tb_location.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 73);
+            this.label2.Location = new System.Drawing.Point(12, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 15);
             this.label2.TabIndex = 6;
             this.label2.Text = "Beskrivning:";
+            // 
+            // lbl_time
+            // 
+            this.lbl_time.AutoSize = true;
+            this.lbl_time.Location = new System.Drawing.Point(172, 73);
+            this.lbl_time.Name = "lbl_time";
+            this.lbl_time.Size = new System.Drawing.Size(26, 15);
+            this.lbl_time.TabIndex = 8;
+            this.lbl_time.Text = "Tid:";
+            // 
+            // cb_time
+            // 
+            this.cb_time.FormattingEnabled = true;
+            this.cb_time.Location = new System.Drawing.Point(204, 70);
+            this.cb_time.Name = "cb_time";
+            this.cb_time.Size = new System.Drawing.Size(90, 23);
+            this.cb_time.TabIndex = 3;
             // 
             // CreateEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(306, 398);
+            this.Controls.Add(this.cb_time);
+            this.Controls.Add(this.lbl_time);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_location);
@@ -116,6 +137,7 @@ namespace KTHare
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateEvent";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.CreateEvent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,5 +152,7 @@ namespace KTHare
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_location;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cb_time;
+        private System.Windows.Forms.Label lbl_time;
     }
 }

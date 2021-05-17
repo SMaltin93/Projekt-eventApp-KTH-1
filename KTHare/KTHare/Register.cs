@@ -110,7 +110,6 @@ namespace KTHare
                     errorProvider1.Clear();
                     if (!string.IsNullOrEmpty(tb_password.Text) && !string.IsNullOrEmpty(tb_name.Text))
                     {
-
                         btn_register.Enabled = true;
                         break;
                     }
@@ -174,15 +173,12 @@ namespace KTHare
                     btn_register.Enabled = false;
                     break;
                 }
-
             }
            
         }
         /*
          * ################ Help functions ###########
          */
-
-
         /**
          *@return true if the user has a kth-email, false otherwise 
          */

@@ -19,8 +19,7 @@ namespace KTHare
         }
 
         private void btn_login_Click(object sender, EventArgs e)
-        {
-          
+        {        
             Database db = new Database();
 
             string mail = tb_mail.Text;
