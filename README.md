@@ -6,9 +6,9 @@
 
 * Programmet startas med en en login/register sida
 
-            * Användaren kan logga in om användaren har redan ett konto
-            * Det ska inte gå att klicka på logga in om man inte skriver ett kth mail 
-            * Användaren kan skapa ett konto om användaren inte redan har ett 
+            - Användaren kan logga in om användaren har redan ett konto
+            - Det ska inte gå att klicka på logga in om man inte skriver ett kth mail 
+            - Användaren kan skapa ett konto om användaren inte redan har ett 
 
 * Skapa ett konto fönstret
 
@@ -18,7 +18,7 @@
 
 * Event fönstret
 
-      ' Användaren ska kunna skapa eventet om de inskrivna informationen är tillräckliga (plats, tid och beskrivning). 
+      * Användaren ska kunna skapa eventet om de inskrivna informationen är tillräckliga (plats, tid och beskrivning). 
       * Användaren ska kunna gå med andras event.
       * Eventet skall visas för studenterna som är inloggade. 
       * Det ska finnas en lista som visar alla deltagare.
