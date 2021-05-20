@@ -12,6 +12,8 @@ namespace KTHare
 {
     public partial class Register : Form
     {
+
+      
         public string GetEmail;
         public string GetPassword;
         public string GetName;
@@ -31,6 +33,11 @@ namespace KTHare
             this.Hide();
             form.Show();
         }
+
+        /*
+         * Save the login details and send a verification code to the user
+         * Check if the user is already registed
+         */
         private void btn_register_Click(object sender, EventArgs e)
         {           
             GetEmail = this.tb_mail.Text;
@@ -76,6 +83,9 @@ namespace KTHare
                 MessageBox.Show("Kontot finns redan!");
             }               
         }
+        /*
+         * Show the password by clicking the show button
+         */
         private void cb_showPassword_CheckedChanged(object sender, EventArgs e)
         {
             if (cb_showPassword.Checked == true)
@@ -151,11 +161,14 @@ namespace KTHare
                 }
             }
         }
+        /*
+         * Conditions for accepting a password 
+         */
         private void tb_password_TextChanged(object sender, EventArgs e)
         {
             while (true)
             {
-
+               //  the password should has letters || numbers
                 if (nameOrPassControl(tb_password.Text) == true && correctInput == true && controlLength(tb_name.Text, tb_password.Text))
                 {
                     errorProvider1.Clear();
@@ -164,7 +177,7 @@ namespace KTHare
 
                 }else if (nameOrPassControl(tb_password.Text) != true)
                 {
-                    errorProvider1.SetError(this.tb_password, "Failed input! Numbers and letters just allowed");
+                    errorProvider1.SetError(this.tb_password, "Fel input, indast bokstaver och siffror är accepterade!");
                     break;
                 }
                 else 
@@ -189,6 +202,11 @@ namespace KTHare
           
         }
 
+
+
+        /**
+        *@return true if the password just has numbers or letters, false otherwise 
+        */
         public bool nameOrPassControl (String input)
         {
             return Regex.IsMatch(input, @"^([a-zA-Z0-9]+)$");    

@@ -15,12 +15,24 @@ namespace KTHare
     
     public partial class CodeVerification : Form
     {
+
+        /*
+         * Call Register class 
+         */
         public Register read;
+
+        /**
+         * Constructore reads the user register details
+         */
         public CodeVerification(Register read)
         {
             this.read = read;
             InitializeComponent();
         }
+        /**
+         * Verify button
+         * Create login details if the user has written the verification code correctly, show appropriate message otherwise 
+         */
         private void btn_verify_Click(object sender, EventArgs e)
         {
             
@@ -56,6 +68,9 @@ namespace KTHare
                 MessageBox.Show("Fel verifieringskod! \n Försök igen!");
             }
         }
+        /*
+         * Show the user name && email on the verification box 
+         */
 
         private void CodeVerification_Load(object sender, EventArgs e)
         {
