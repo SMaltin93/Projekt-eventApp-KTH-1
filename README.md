@@ -31,7 +31,7 @@
 
       - Programmet installeras genom att köra setup-filen som finnas i: KTHare/KTHare/MyAppSetup/Release/KTHareSetup.msi
       - Det går även att installera KTH:are med länken nedan:
-     [Ladda ner](https://drive.google.com/file/d/1R7ecj9Igq4OdrvsdN4GHMYGpSOMPNKB9/view?usp=sharing) 
+     [Ladda ner](https://drive.google.com/file/d/1T38obJkq1qntULokJq21Brz7QsXaoqf3/view?usp=sharing) 
 
 
 
