@@ -839,28 +839,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\slema\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\maxis\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\slema\\source\\repos\\KTHare\\KTHare\\KTHare\\KTHare.csproj",
+      "projectUniqueName": "C:\\Users\\maxis\\source\\KTHare\\KTHare\\KTHare\\KTHare.csproj",
       "projectName": "KTHare",
-      "projectPath": "C:\\Users\\slema\\source\\repos\\KTHare\\KTHare\\KTHare\\KTHare.csproj",
-      "packagesPath": "C:\\Users\\slema\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\slema\\source\\repos\\KTHare\\KTHare\\KTHare\\obj\\",
+      "projectPath": "C:\\Users\\maxis\\source\\KTHare\\KTHare\\KTHare\\KTHare.csproj",
+      "packagesPath": "C:\\Users\\maxis\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\maxis\\source\\KTHare\\KTHare\\KTHare\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\slema\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\maxis\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -911,13 +908,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\slema\\source\\repos\\KTHare\\KTHare\\KTHare\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'expectedPackageFiles', line 27, position 0."
-    }
-  ]
+  }
 }
