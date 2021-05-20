@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="KTHare.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">server=155.4.6.242;userid=username;password=password;database=kthare</Value>
+    </Setting>
+    <Setting Name="HashPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">hej123JagHeterMaxochSam</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
