@@ -11,9 +11,7 @@ using System.Net.Mail;
 namespace KTHare
 {
     public partial class Register : Form
-    {
-
-      
+    {   
         public string GetEmail;
         public string GetPassword;
         public string GetName;
@@ -201,9 +199,6 @@ namespace KTHare
             return Regex.IsMatch(userMail, @"^([\w\.\-]+)@((?i)[kth]+)((\.(\w)(?i)[se])+)$");
           
         }
-
-
-
         /**
         *@return true if the password just has numbers or letters, false otherwise 
         */

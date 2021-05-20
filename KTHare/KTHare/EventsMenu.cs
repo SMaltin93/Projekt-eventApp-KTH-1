@@ -88,7 +88,7 @@ namespace KTHare
             Label label = new Label();
             label.AutoSize = true;
             label.ForeColor = color;
-            label.Text = "\n" + name + " (" + location + ") - " + participantNames + " (" + participants + ") - " + time;
+            label.Text = "\n" + name + " (" + location + ") - " + participantNames + " (" + participants + ") - " + DateTime.UtcNow.ToString("yyyy-MM-dd") + " " + time ;
             label.Location = new Point(30, y);
 
             PictureBox pictureBox = new PictureBox();
@@ -271,6 +271,17 @@ namespace KTHare
         private void EventsMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            User.id = -1;
+            User.name = "";
+            User.mail = "";
+
+            var form = new Login();
+            this.Hide();
+            form.Show();
         }
     }
 }

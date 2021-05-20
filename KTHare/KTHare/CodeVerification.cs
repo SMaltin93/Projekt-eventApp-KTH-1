@@ -15,7 +15,6 @@ namespace KTHare
     
     public partial class CodeVerification : Form
     {
-
         /*
          * Call Register class 
          */
@@ -34,8 +33,7 @@ namespace KTHare
          * Create login details if the user has written the verification code correctly, show appropriate message otherwise 
          */
         private void btn_verify_Click(object sender, EventArgs e)
-        {
-            
+        {           
             if ( read.GetVerfication == tb_verification.Text )
             {
                 Database db = new Database();
