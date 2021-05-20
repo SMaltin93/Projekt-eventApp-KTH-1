@@ -67,6 +67,7 @@ namespace KTHare
             string location = rdr.GetString(4);
             string description = rdr.GetString(5);
             string time = rdr.GetString(6);
+            DateTime created = rdr.GetDateTime(7);
 
             Color color = Color.Black;
             int indexPositionUser = -1;
@@ -88,7 +89,7 @@ namespace KTHare
             Label label = new Label();
             label.AutoSize = true;
             label.ForeColor = color;
-            label.Text = "\n" + name + " (" + location + ") - " + participantNames + " (" + participants + ") - " + DateTime.UtcNow.ToString("yyyy-MM-dd") + " " + time ;
+            label.Text = "\n" + name + " (" + location + ") - " + participantNames + " (" + participants + ") - " + created.ToString("yyyy-MM-dd") + " " + time ;
             label.Location = new Point(30, y);
 
             PictureBox pictureBox = new PictureBox();
