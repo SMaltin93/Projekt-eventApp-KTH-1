@@ -72,7 +72,6 @@ namespace KTHare
                 }
 
                 var form = new CodeVerification(this);
-                GetHashedPassword = new Hashing(this).getHashed;
                 this.Hide();
                 form.Show();
             }

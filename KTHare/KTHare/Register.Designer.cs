@@ -30,6 +30,7 @@ namespace KTHare
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.linklbl_login = new System.Windows.Forms.LinkLabel();
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_mail = new System.Windows.Forms.Label();
@@ -170,6 +171,7 @@ namespace KTHare
             this.Controls.Add(this.tb_name);
             this.Controls.Add(this.btn_register);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
