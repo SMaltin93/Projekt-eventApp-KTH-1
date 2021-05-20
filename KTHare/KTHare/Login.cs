@@ -18,6 +18,9 @@ namespace KTHare
             btn_login.Enabled = false;
         }
 
+        /*
+         * Check if the user is registerd and show an appropriate message
+         */ 
         private void btn_login_Click(object sender, EventArgs e)
         {        
             Database db = new Database();
@@ -25,7 +28,7 @@ namespace KTHare
             string mail = tb_mail.Text;
             string password = tb_password.Text;
 
-            var sql = "SELECT * FROM login_table WHERE mail='" + mail + "'";
+            var sql = "SELECT id,mail,name,AES_DECRYPT(password, '" + KTHare.Properties.Settings.Default.HashPassword + "') AS 'password' FROM login_table WHERE mail='" + mail + "'";
             using var cmd = new MySqlCommand(sql, db.con);
 
             using MySqlDataReader rdr = cmd.ExecuteReader();
@@ -59,7 +62,9 @@ namespace KTHare
             this.Hide();
             form.Show();
         }
-
+        /*
+         * Show the password by clicking on show button 
+         */
         private void cb_showPassword_CheckedChanged(object sender, EventArgs e)
         {
             if (cb_showPassword.Checked == true)
@@ -73,13 +78,17 @@ namespace KTHare
 
         private void Login_Load(object sender, EventArgs e)
         {
-            Database db = new Database(); //Checks if the database is online - hosted on Max-Desktop pc
+            Database db = new Database(); //Check if the database is available.
         }
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
         }
+
+        /*
+         * Unable the login button if the email is an KTH-email, disable otherwise
+         */
         private void tb_mail_TextChanged(object sender, EventArgs e)
         {
             while ( true)

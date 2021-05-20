@@ -135,7 +135,7 @@ namespace KTHare
             this.MinimizeBox = false;
             this.Name = "CreateEvent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CreateEvent";
+            this.Text = "Skapa event";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.CreateEvent_Load);
             this.ResumeLayout(false);

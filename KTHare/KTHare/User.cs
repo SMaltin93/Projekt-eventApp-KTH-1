@@ -5,7 +5,7 @@ using System.Text;
 namespace KTHare
 {
     /**
-    * Sparar informationen om användaren
+    * Saves information about the user - accessable trough whole program
     */
     static class User
     {

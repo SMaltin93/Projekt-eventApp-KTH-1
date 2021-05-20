@@ -41,13 +41,16 @@ namespace KTHare
             this.cb_showPassword = new System.Windows.Forms.CheckBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.lbl_show = new System.Windows.Forms.Label();
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // linklbl_login
             // 
             this.linklbl_login.AutoSize = true;
-            this.linklbl_login.Location = new System.Drawing.Point(111, 97);
+            this.linklbl_login.BackColor = System.Drawing.Color.Transparent;
+            this.linklbl_login.Location = new System.Drawing.Point(136, 121);
             this.linklbl_login.Name = "linklbl_login";
             this.linklbl_login.Size = new System.Drawing.Size(115, 15);
             this.linklbl_login.TabIndex = 5;
@@ -58,42 +61,44 @@ namespace KTHare
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
-            this.lbl_name.Location = new System.Drawing.Point(15, 38);
+            this.lbl_name.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_name.Location = new System.Drawing.Point(16, 48);
             this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(55, 15);
+            this.lbl_name.Size = new System.Drawing.Size(58, 15);
             this.lbl_name.TabIndex = 10;
-            this.lbl_name.Text = "Förnamn";
+            this.lbl_name.Text = "Förnamn:";
             // 
             // lbl_mail
             // 
             this.lbl_mail.AutoSize = true;
-            this.lbl_mail.Location = new System.Drawing.Point(15, 9);
+            this.lbl_mail.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_mail.Location = new System.Drawing.Point(16, 11);
             this.lbl_mail.Name = "lbl_mail";
-            this.lbl_mail.Size = new System.Drawing.Size(57, 15);
+            this.lbl_mail.Size = new System.Drawing.Size(60, 15);
             this.lbl_mail.TabIndex = 9;
-            this.lbl_mail.Text = "KTH-mail";
+            this.lbl_mail.Text = "KTH-mail:";
             // 
             // tb_mail
             // 
-            this.tb_mail.Location = new System.Drawing.Point(75, 6);
+            this.tb_mail.Location = new System.Drawing.Point(94, 8);
             this.tb_mail.Name = "tb_mail";
-            this.tb_mail.Size = new System.Drawing.Size(231, 23);
+            this.tb_mail.Size = new System.Drawing.Size(288, 23);
             this.tb_mail.TabIndex = 0;
             this.tb_mail.TextChanged += new System.EventHandler(this.tb_mail_TextChanged);
             // 
             // tb_name
             // 
-            this.tb_name.Location = new System.Drawing.Point(76, 35);
+            this.tb_name.Location = new System.Drawing.Point(95, 44);
             this.tb_name.Name = "tb_name";
-            this.tb_name.Size = new System.Drawing.Size(231, 23);
+            this.tb_name.Size = new System.Drawing.Size(288, 23);
             this.tb_name.TabIndex = 1;
             this.tb_name.TextChanged += new System.EventHandler(this.tb_name_TextChanged);
             // 
             // btn_register
             // 
-            this.btn_register.Location = new System.Drawing.Point(254, 93);
+            this.btn_register.Location = new System.Drawing.Point(308, 114);
             this.btn_register.Name = "btn_register";
-            this.btn_register.Size = new System.Drawing.Size(75, 23);
+            this.btn_register.Size = new System.Drawing.Size(94, 29);
             this.btn_register.TabIndex = 4;
             this.btn_register.Text = "Skapa";
             this.btn_register.UseVisualStyleBackColor = true;
@@ -101,9 +106,9 @@ namespace KTHare
             // 
             // tb_password
             // 
-            this.tb_password.Location = new System.Drawing.Point(76, 64);
+            this.tb_password.Location = new System.Drawing.Point(95, 80);
             this.tb_password.Name = "tb_password";
-            this.tb_password.Size = new System.Drawing.Size(231, 23);
+            this.tb_password.Size = new System.Drawing.Size(288, 23);
             this.tb_password.TabIndex = 2;
             this.tb_password.UseSystemPasswordChar = true;
             this.tb_password.TextChanged += new System.EventHandler(this.tb_password_TextChanged);
@@ -111,20 +116,22 @@ namespace KTHare
             // lbl_password
             // 
             this.lbl_password.AutoSize = true;
-            this.lbl_password.Location = new System.Drawing.Point(15, 67);
+            this.lbl_password.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_password.Location = new System.Drawing.Point(16, 83);
             this.lbl_password.Name = "lbl_password";
-            this.lbl_password.Size = new System.Drawing.Size(56, 15);
+            this.lbl_password.Size = new System.Drawing.Size(59, 15);
             this.lbl_password.TabIndex = 13;
-            this.lbl_password.Text = "Lösenord";
+            this.lbl_password.Text = "Lösenord:";
             // 
             // cb_showPassword
             // 
             this.cb_showPassword.AutoSize = true;
-            this.cb_showPassword.Location = new System.Drawing.Point(313, 68);
+            this.cb_showPassword.BackColor = System.Drawing.Color.Transparent;
+            this.cb_showPassword.Location = new System.Drawing.Point(395, 90);
             this.cb_showPassword.Name = "cb_showPassword";
             this.cb_showPassword.Size = new System.Drawing.Size(15, 14);
             this.cb_showPassword.TabIndex = 3;
-            this.cb_showPassword.UseVisualStyleBackColor = true;
+            this.cb_showPassword.UseVisualStyleBackColor = false;
             this.cb_showPassword.CheckedChanged += new System.EventHandler(this.cb_showPassword_CheckedChanged);
             // 
             // errorProvider1
@@ -134,17 +141,24 @@ namespace KTHare
             // lbl_show
             // 
             this.lbl_show.AutoSize = true;
-            this.lbl_show.Location = new System.Drawing.Point(328, 67);
+            this.lbl_show.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_show.Location = new System.Drawing.Point(389, 72);
             this.lbl_show.Name = "lbl_show";
-            this.lbl_show.Size = new System.Drawing.Size(36, 15);
+            this.lbl_show.Size = new System.Drawing.Size(28, 15);
             this.lbl_show.TabIndex = 14;
-            this.lbl_show.Text = "Show";
+            this.lbl_show.Text = "Visa";
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.BlinkRate = 1;
+            this.errorProvider2.ContainerControl = this;
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 122);
+            this.BackgroundImage = global::KTHare.Properties.Resources.kth;
+            this.ClientSize = new System.Drawing.Size(442, 153);
             this.Controls.Add(this.lbl_show);
             this.Controls.Add(this.cb_showPassword);
             this.Controls.Add(this.lbl_password);
@@ -161,10 +175,11 @@ namespace KTHare
             this.MinimizeBox = false;
             this.Name = "Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Register";
+            this.Text = "KTH:are - Skapa konto";
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Register_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +198,6 @@ namespace KTHare
         private System.Windows.Forms.CheckBox cb_showPassword;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label lbl_show;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }
