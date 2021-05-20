@@ -15,6 +15,7 @@ namespace KTHare
         {
             InitializeComponent();
         }
+
         /*
          * Create new event
          */
@@ -50,7 +51,9 @@ namespace KTHare
                 MessageBox.Show("Behöver mer information om eventet. Försök igen!");
             }
         }
-
+        /*
+         * Load events
+         */
         private void CreateEvent_Load(object sender, EventArgs e)
         {
             cb_time.DisplayMember = "Time";
