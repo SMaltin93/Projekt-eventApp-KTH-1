@@ -29,6 +29,7 @@ namespace KTHare
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.btn_login = new System.Windows.Forms.Button();
             this.tb_password = new System.Windows.Forms.TextBox();
             this.tb_mail = new System.Windows.Forms.TextBox();
@@ -142,7 +143,9 @@ namespace KTHare
             this.Controls.Add(this.tb_mail);
             this.Controls.Add(this.tb_password);
             this.Controls.Add(this.btn_login);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

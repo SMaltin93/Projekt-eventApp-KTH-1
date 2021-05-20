@@ -29,6 +29,7 @@ namespace KTHare
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CodeVerification));
             this.btn_verify = new System.Windows.Forms.Button();
             this.lbl_verify = new System.Windows.Forms.Label();
             this.tb_verification = new System.Windows.Forms.TextBox();
@@ -96,7 +97,9 @@ namespace KTHare
             this.Controls.Add(this.tb_verification);
             this.Controls.Add(this.lbl_verify);
             this.Controls.Add(this.btn_verify);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

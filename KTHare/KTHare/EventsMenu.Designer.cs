@@ -30,6 +30,7 @@ namespace KTHare
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventsMenu));
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.btn_createEvent = new System.Windows.Forms.Button();
             this.btn_logout = new System.Windows.Forms.Button();
@@ -73,8 +74,10 @@ namespace KTHare
             this.ClientSize = new System.Drawing.Size(910, 636);
             this.Controls.Add(this.btn_logout);
             this.Controls.Add(this.btn_createEvent);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EventsMenu";
