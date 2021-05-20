@@ -16,7 +16,7 @@
       - Mailet kontrolleras genom att få en verifikationskod som skickas till det inskrivna KTH-mailen.
       - Kontot skapas när man har skrivit in sin verifieringskod. 
 
-* Event fönstret
+* Event-fönstret
 
       - Användaren ska kunna skapa eventet om den inskriva informationen är tillräcklig (plats, tid och beskrivning). 
       - Användaren ska kunna gå med andras event.
