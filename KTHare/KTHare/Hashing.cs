@@ -5,7 +5,6 @@ using System.Security.Cryptography;
 
 namespace KTHare
 {
-   
     public class Hashing
     {
         public Register getUserPassword;

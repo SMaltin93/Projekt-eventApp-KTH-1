@@ -171,7 +171,7 @@ namespace KTHare
             this.MinimizeBox = false;
             this.Name = "EventInformation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EventInformation";
+            this.Text = "Eventinformation";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.EventInformation_Load);
             this.ResumeLayout(false);

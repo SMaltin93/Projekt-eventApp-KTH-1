@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace KTHare
 {
     /**
-    * Kontrollerar ifall databasen är på eller inte.
+    * Checks if the database is on or not.
     */
     class Database
     {
