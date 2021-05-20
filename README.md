@@ -3,6 +3,7 @@
 * Ett event program för individer på KTH som går att laddas ner till PC (Windows 10 har enbart testas) 
 * Programmet är en Windows Forms Application och skriven med C# 
 * Programmet är gjord för att KTH studenter ska kunna skapa och med i olika event  
+------------------------------------------------------------------------------------------------------
 
 * Programmet startas med en en login/register sida
 
