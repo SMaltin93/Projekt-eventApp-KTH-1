@@ -40,7 +40,7 @@ namespace KTHare
         }
 
         /**
-        * Laddar in eventsen från databasen
+        * load the events from the database
         */
         private void loadEvents()
         {
@@ -55,7 +55,7 @@ namespace KTHare
             while (rdr.Read())
             {
                 createElements(rdr, y);
-                y += 60; //Avstånd mellan eventen på skärmen i pixlar.
+                y += 60; // Interval between the events
             }
         }
 
@@ -71,7 +71,9 @@ namespace KTHare
             Color color = Color.Black;
             int indexPositionUser = -1;
 
-            //Skapar en array med alla deltagare. Används sedan för att kolla om användaren redan är med i eventet.
+            // Create an array of the participants
+            // It uses to check if the user is already a participant 
+
             string[] participantNamesArray = participantNames.Split(", ");
 
             for (int i = 0; i < participantNamesArray.Length; i++)
@@ -86,7 +88,7 @@ namespace KTHare
             Label label = new Label();
             label.AutoSize = true;
             label.ForeColor = color;
-            label.Text = "\n" + name + " (" + location + ") - " + participantNames + " (" + participants + ") - " + time;
+            label.Text = "\n" + name + " (" + location + ") - " + participantNames + " (" + participants + ") - " + DateTime.UtcNow.ToString("yyyy-MM-dd") + " " + time ;
             label.Location = new Point(30, y);
 
             PictureBox pictureBox = new PictureBox();
@@ -186,6 +188,10 @@ namespace KTHare
                 }
             }
         }
+
+        /*
+         * Delete the event when the user leaves it 
+         */
         private void deleteEvent(string name)
         {
             string cs = @KTHare.Properties.Settings.Default.ConnectionString;
@@ -213,6 +219,10 @@ namespace KTHare
                 con.Close();
             }
         }
+
+        /*
+         * Create an event
+         */
         private void btn_createEvent_Click(object sender, EventArgs e)
         {
             var form = new CreateEvent();
@@ -261,6 +271,17 @@ namespace KTHare
         private void EventsMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            User.id = -1;
+            User.name = "";
+            User.mail = "";
+
+            var form = new Login();
+            this.Hide();
+            form.Show();
         }
     }
 }

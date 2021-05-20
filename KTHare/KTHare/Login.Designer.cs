@@ -29,6 +29,7 @@ namespace KTHare
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.btn_login = new System.Windows.Forms.Button();
             this.tb_password = new System.Windows.Forms.TextBox();
             this.tb_mail = new System.Windows.Forms.TextBox();
@@ -69,6 +70,7 @@ namespace KTHare
             // lbl_mail
             // 
             this.lbl_mail.AutoSize = true;
+            this.lbl_mail.BackColor = System.Drawing.Color.Transparent;
             this.lbl_mail.Location = new System.Drawing.Point(16, 11);
             this.lbl_mail.Name = "lbl_mail";
             this.lbl_mail.Size = new System.Drawing.Size(60, 15);
@@ -78,6 +80,7 @@ namespace KTHare
             // lbl_password
             // 
             this.lbl_password.AutoSize = true;
+            this.lbl_password.BackColor = System.Drawing.Color.Transparent;
             this.lbl_password.Location = new System.Drawing.Point(17, 48);
             this.lbl_password.Name = "lbl_password";
             this.lbl_password.Size = new System.Drawing.Size(59, 15);
@@ -87,7 +90,8 @@ namespace KTHare
             // linklbl_createaccount
             // 
             this.linklbl_createaccount.AutoSize = true;
-            this.linklbl_createaccount.Location = new System.Drawing.Point(206, 85);
+            this.linklbl_createaccount.BackColor = System.Drawing.Color.Transparent;
+            this.linklbl_createaccount.Location = new System.Drawing.Point(183, 85);
             this.linklbl_createaccount.Name = "linklbl_createaccount";
             this.linklbl_createaccount.Size = new System.Drawing.Size(95, 15);
             this.linklbl_createaccount.TabIndex = 4;
@@ -98,11 +102,12 @@ namespace KTHare
             // cb_showPassword
             // 
             this.cb_showPassword.AutoSize = true;
-            this.cb_showPassword.Location = new System.Drawing.Point(386, 49);
+            this.cb_showPassword.BackColor = System.Drawing.Color.Transparent;
+            this.cb_showPassword.Location = new System.Drawing.Point(396, 54);
             this.cb_showPassword.Name = "cb_showPassword";
             this.cb_showPassword.Size = new System.Drawing.Size(15, 14);
             this.cb_showPassword.TabIndex = 2;
-            this.cb_showPassword.UseVisualStyleBackColor = true;
+            this.cb_showPassword.UseVisualStyleBackColor = false;
             this.cb_showPassword.CheckedChanged += new System.EventHandler(this.cb_showPassword_CheckedChanged);
             // 
             // lbl_show
@@ -117,7 +122,8 @@ namespace KTHare
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(402, 48);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(389, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 15);
             this.label1.TabIndex = 15;
@@ -127,6 +133,7 @@ namespace KTHare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::KTHare.Properties.Resources.kth;
             this.ClientSize = new System.Drawing.Size(442, 119);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cb_showPassword);
@@ -136,7 +143,9 @@ namespace KTHare
             this.Controls.Add(this.tb_mail);
             this.Controls.Add(this.tb_password);
             this.Controls.Add(this.btn_login);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

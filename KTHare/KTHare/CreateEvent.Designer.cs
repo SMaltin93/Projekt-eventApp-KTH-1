@@ -29,6 +29,7 @@ namespace KTHare
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateEvent));
             this.btn_createEvent = new System.Windows.Forms.Button();
             this.tb_name = new System.Windows.Forms.TextBox();
             this.lbl_name = new System.Windows.Forms.Label();
@@ -130,12 +131,14 @@ namespace KTHare
             this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.tb_name);
             this.Controls.Add(this.btn_createEvent);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CreateEvent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CreateEvent";
+            this.Text = "Skapa event";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.CreateEvent_Load);
             this.ResumeLayout(false);

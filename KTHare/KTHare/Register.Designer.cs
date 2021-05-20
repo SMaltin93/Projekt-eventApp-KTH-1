@@ -30,6 +30,7 @@ namespace KTHare
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.linklbl_login = new System.Windows.Forms.LinkLabel();
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_mail = new System.Windows.Forms.Label();
@@ -49,7 +50,8 @@ namespace KTHare
             // linklbl_login
             // 
             this.linklbl_login.AutoSize = true;
-            this.linklbl_login.Location = new System.Drawing.Point(187, 121);
+            this.linklbl_login.BackColor = System.Drawing.Color.Transparent;
+            this.linklbl_login.Location = new System.Drawing.Point(136, 121);
             this.linklbl_login.Name = "linklbl_login";
             this.linklbl_login.Size = new System.Drawing.Size(115, 15);
             this.linklbl_login.TabIndex = 5;
@@ -60,6 +62,7 @@ namespace KTHare
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
+            this.lbl_name.BackColor = System.Drawing.Color.Transparent;
             this.lbl_name.Location = new System.Drawing.Point(16, 48);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(58, 15);
@@ -69,6 +72,7 @@ namespace KTHare
             // lbl_mail
             // 
             this.lbl_mail.AutoSize = true;
+            this.lbl_mail.BackColor = System.Drawing.Color.Transparent;
             this.lbl_mail.Location = new System.Drawing.Point(16, 11);
             this.lbl_mail.Name = "lbl_mail";
             this.lbl_mail.Size = new System.Drawing.Size(60, 15);
@@ -113,6 +117,7 @@ namespace KTHare
             // lbl_password
             // 
             this.lbl_password.AutoSize = true;
+            this.lbl_password.BackColor = System.Drawing.Color.Transparent;
             this.lbl_password.Location = new System.Drawing.Point(16, 83);
             this.lbl_password.Name = "lbl_password";
             this.lbl_password.Size = new System.Drawing.Size(59, 15);
@@ -122,11 +127,12 @@ namespace KTHare
             // cb_showPassword
             // 
             this.cb_showPassword.AutoSize = true;
-            this.cb_showPassword.Location = new System.Drawing.Point(387, 86);
+            this.cb_showPassword.BackColor = System.Drawing.Color.Transparent;
+            this.cb_showPassword.Location = new System.Drawing.Point(402, 89);
             this.cb_showPassword.Name = "cb_showPassword";
             this.cb_showPassword.Size = new System.Drawing.Size(15, 14);
             this.cb_showPassword.TabIndex = 3;
-            this.cb_showPassword.UseVisualStyleBackColor = true;
+            this.cb_showPassword.UseVisualStyleBackColor = false;
             this.cb_showPassword.CheckedChanged += new System.EventHandler(this.cb_showPassword_CheckedChanged);
             // 
             // errorProvider1
@@ -136,7 +142,8 @@ namespace KTHare
             // lbl_show
             // 
             this.lbl_show.AutoSize = true;
-            this.lbl_show.Location = new System.Drawing.Point(402, 85);
+            this.lbl_show.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_show.Location = new System.Drawing.Point(389, 71);
             this.lbl_show.Name = "lbl_show";
             this.lbl_show.Size = new System.Drawing.Size(28, 15);
             this.lbl_show.TabIndex = 14;
@@ -151,6 +158,7 @@ namespace KTHare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::KTHare.Properties.Resources.kth;
             this.ClientSize = new System.Drawing.Size(442, 153);
             this.Controls.Add(this.lbl_show);
             this.Controls.Add(this.cb_showPassword);
@@ -162,7 +170,9 @@ namespace KTHare
             this.Controls.Add(this.tb_mail);
             this.Controls.Add(this.tb_name);
             this.Controls.Add(this.btn_register);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

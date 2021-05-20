@@ -16,6 +16,9 @@ namespace KTHare
             InitializeComponent();
         }
 
+        /*
+         * Create new event
+         */
         private void btn_createEvent_Click(object sender, EventArgs e)
         {
             Database db = new Database();
@@ -23,6 +26,8 @@ namespace KTHare
             string location = tb_location.Text;
             string description = tb_description.Text;
             string time = cb_time.Text;
+
+            // Add details to the database
 
             if (name != "" && location != "" && description != "" && time != "")
             {
@@ -46,7 +51,9 @@ namespace KTHare
                 MessageBox.Show("Behöver mer information om eventet. Försök igen!");
             }
         }
-
+        /*
+         * Load events
+         */
         private void CreateEvent_Load(object sender, EventArgs e)
         {
             cb_time.DisplayMember = "Time";

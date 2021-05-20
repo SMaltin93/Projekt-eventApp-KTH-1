@@ -29,6 +29,7 @@ namespace KTHare
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CodeVerification));
             this.btn_verify = new System.Windows.Forms.Button();
             this.lbl_verify = new System.Windows.Forms.Label();
             this.tb_verification = new System.Windows.Forms.TextBox();
@@ -51,6 +52,7 @@ namespace KTHare
             // lbl_verify
             // 
             this.lbl_verify.AutoSize = true;
+            this.lbl_verify.BackColor = System.Drawing.Color.Transparent;
             this.lbl_verify.Location = new System.Drawing.Point(16, 11);
             this.lbl_verify.Name = "lbl_verify";
             this.lbl_verify.Size = new System.Drawing.Size(98, 15);
@@ -67,6 +69,7 @@ namespace KTHare
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
+            this.lbl_name.BackColor = System.Drawing.Color.Transparent;
             this.lbl_name.Location = new System.Drawing.Point(16, 61);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(43, 15);
@@ -76,6 +79,7 @@ namespace KTHare
             // lbl_mail
             // 
             this.lbl_mail.AutoSize = true;
+            this.lbl_mail.BackColor = System.Drawing.Color.Transparent;
             this.lbl_mail.Location = new System.Drawing.Point(16, 86);
             this.lbl_mail.Name = "lbl_mail";
             this.lbl_mail.Size = new System.Drawing.Size(39, 15);
@@ -86,13 +90,16 @@ namespace KTHare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::KTHare.Properties.Resources.kth;
             this.ClientSize = new System.Drawing.Size(411, 112);
             this.Controls.Add(this.lbl_mail);
             this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.tb_verification);
             this.Controls.Add(this.lbl_verify);
             this.Controls.Add(this.btn_verify);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

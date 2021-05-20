@@ -55,4 +55,8 @@ C:\Users\slema\source\repos\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.
 C:\Users\slema\source\repos\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.pdb
 C:\Users\slema\source\repos\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.genruntimeconfig.cache
 C:\Users\maxis\source\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.CodeVerification.resources
+<<<<<<< HEAD
+=======
+C:\Users\maxis\source\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.Properties.Resources.resources
+>>>>>>> 1ea902bd4b10027c8cc4365f81c2a40bb8d985ea
 C:\Users\slema\source\repos\KTHare\KTHare\KTHare\obj\Debug\netcoreapp3.1\KTHare.Properties.Resources.resources

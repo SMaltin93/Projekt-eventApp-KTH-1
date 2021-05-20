@@ -30,6 +30,7 @@ namespace KTHare
         private void InitializeComponent()
         {
             System.Windows.Forms.Label lbl_participantsLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventInformation));
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_participants = new System.Windows.Forms.Label();
             this.tb_name = new System.Windows.Forms.TextBox();
@@ -166,12 +167,14 @@ namespace KTHare
             this.Controls.Add(this.tb_name);
             this.Controls.Add(this.lbl_participants);
             this.Controls.Add(this.lbl_name);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EventInformation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EventInformation";
+            this.Text = "Eventinformation";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.EventInformation_Load);
             this.ResumeLayout(false);
