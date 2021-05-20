@@ -124,12 +124,12 @@ namespace KTHare
                 }
                 else if (string.IsNullOrEmpty(tb_mail.Text))
                 {
-                    errorProvider1.SetError(this.tb_mail, "Skriv in din KTH-emailadress.");
+                    errorProvider1.SetError(this.tb_mail, "Skriv in din KTH-mailadress.");
                     break;
                 }
                 else
                 {
-                    errorProvider1.SetError(this.tb_mail, "Ingen KTH-emailadress, försök igen!");
+                    errorProvider1.SetError(this.tb_mail, "Ingen KTH-mailadress, försök igen!");
                     break;
                 }
             }

@@ -95,14 +95,14 @@ namespace KTHare
             {
                 if (check.emailControl(tb_mail.Text) == true)
                 {
+                    errorProvider1.Clear();
                     btn_login.Enabled = true;
                     break;
                 }
-
-                 btn_login.Enabled = false;
-                 break;
+                errorProvider1.SetError(this.tb_mail, "Skriv in din KTH-mail");
+                btn_login.Enabled = false;
+                break;
             }
-
         }
     }
 }

@@ -29,6 +29,7 @@ namespace KTHare
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.btn_login = new System.Windows.Forms.Button();
             this.tb_password = new System.Windows.Forms.TextBox();
@@ -39,6 +40,8 @@ namespace KTHare
             this.cb_showPassword = new System.Windows.Forms.CheckBox();
             this.lbl_show = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_login
@@ -129,6 +132,10 @@ namespace KTHare
             this.label1.TabIndex = 15;
             this.label1.Text = "Visa";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -155,6 +162,7 @@ namespace KTHare
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
             this.Load += new System.EventHandler(this.Login_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,5 +179,6 @@ namespace KTHare
         private System.Windows.Forms.CheckBox cb_showPassword;
         private System.Windows.Forms.Label lbl_show;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
