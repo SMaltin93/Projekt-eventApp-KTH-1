@@ -1,34 +1,37 @@
 # KTHare
 
-* Ett event program för individer på KTH som går att laddas ner till PC (Windows 10 har enbart testas) 
-* Programmet är en Windows Forms Application och skriven med C# 
-* Programmet är gjord för att KTH studenter ska kunna skapa och med i olika event  
-------------------------------------------------------------------------------------------------------
+* Ett event program som går att laddas ner till PC (Windows 10 har enbart testas).
+* Programmet är en Windows Forms Application och skriven med C#. 
+* Programmet är skapad för KTH-studenter som vill skapa och gå med i olika event.  
 
-* Programmet startas med en en login/register sida
+* Programmet startas med en login/register sida
 
       - Användaren kan logga in om användaren redan har ett konto.
-      - Det ska inte gå att klicka på logga in om man inte skriver sin kth-mail. 
-      - Användaren kan skapa ett konto om användaren inte redan har ett. 
+      - Det ska inte gå att klicka på logga in om man inte skriver in en KTH-mail. 
+      - Användaren ska kunna skapa ett konto ifall användaren inte redan har ett. 
 
 * Skapa ett konto fönstret
 
-      - Användarens mail accepteras om mailet är en kth-mailadress.
-      - Mailet kontrolleras genom att få ett verifikationskod som skickas till det inskrivna kth-mailet.
-      - Kontot skapas när man har skrivit in verifikationskoden.
+      - Användarens mail accepteras om mailet är en KTH-mail.
+      - Mailet kontrolleras genom att få en verifikationskod som skickas till det inskrivna KTH-mailen.
+      - Kontot skapas när man har skrivit in sin verifieringskod. 
 
 * Event-fönstret
 
-      - Användaren ska kunna skapa eventet om informationen är tillräckliga (plats, tid och beskrivning). 
-      - Användaren ska kunna gå med i andras event.
+      - Användaren ska kunna skapa eventet om den inskriva informationen är tillräcklig (plats, tid och beskrivning). 
+      - Användaren ska kunna gå med andras event.
       - Eventet skall visas för studenterna som är inloggade. 
       - Det ska finnas en lista som visar alla deltagare.
-      - Studenten som skapade eventet kan lämna och det fortfarande finns kvar om andra deltagare finns.
-      - Eventet avslutas när tiden har gått.
-      - Användaren ska kunna märka vilka event användaren deltar i.
+      - Eventet avslutas efter 24-timmar efter att det skapades.
+      - Användaren ska kunna märka vilka event användaren deltar i (grönfärg).
       - Användaren ska kunna logga ut.
               
               
-* Hur användaren installerar KTHare?
+* Installerar KTHare
 
-      - Användaren ska kunna ladda ner KTHare genom att klicka på länken som är bifogad nedan.
+      - Programmet installeras genom att köra setup-filen som finnas i: KTHare/KTHare/MyAppSetup/Release/KTHareSetup.msi
+      - Det går även att installera KTH:are med länken nedan:
+     [Ladda ner](https://drive.google.com/file/d/1R7ecj9Igq4OdrvsdN4GHMYGpSOMPNKB9/view?usp=sharing) 
+
+
+
