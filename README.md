@@ -27,7 +27,7 @@
       - Användaren ska kunna logga ut.
               
               
-* Installerar KTHare
+* Installera KTHare
 
       - Programmet installeras genom att köra setup-filen som finnas i: KTHare/KTHare/MyAppSetup/Release/KTHareSetup.msi
       - Det går även att installera KTH:are med länken nedan:
