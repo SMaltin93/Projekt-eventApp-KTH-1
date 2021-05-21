@@ -23,7 +23,7 @@
       - Eventet skall visas för studenterna som är inloggade. 
       - Det ska finnas en lista som visar alla deltagare.
       - Eventet avslutas efter 24-timmar efter att det skapades.
-      - Användaren ska kunna märka vilka event användaren deltar i (grönfärg).
+      - Användaren ska kunna märka vilka event användaren deltar i (grön färg).
       - Användaren ska kunna logga ut.
               
               
