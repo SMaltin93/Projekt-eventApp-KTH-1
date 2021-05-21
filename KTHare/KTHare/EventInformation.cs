@@ -9,7 +9,6 @@ using MySql.Data.MySqlClient;
 
 namespace KTHare
 {
-
     /*
      * Show the event details to the joiner  
      * Join the event

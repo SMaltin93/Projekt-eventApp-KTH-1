@@ -70,6 +70,7 @@ namespace KTHare
                     cb_time.Items.Add(i + ":00");
                 }
             }
+            cb_time.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }
